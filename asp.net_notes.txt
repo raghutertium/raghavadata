@@ -1,0 +1,2929 @@
+Question:why to learn asp.net ?
+answer  :Now a days projects are devloped in client server architecture means client means front end and server means back end in front end we devlop application or interface through which we can request something to the server and we are developing user friendly applications  in the front end and back end will have data present in it using front end programs we are accessing and requesting the data present in back end and showing it to the user .so when front end and back end are located in same machine we call it as SINGLE TIER ARCHITECTURE projects.suppose we are devloping some application for medical shop it is not having huge amount of data so so it can be developed in single tier projects.here back end means database so when database and front end are located in different machines we call it as TWO TIER ARCHITECTURE and in two tier architecture the scope is upto 50 machines means 50 client machines can access one database server having database contained in it .for two tier architecture best example is shopping cart application . when complexity of application increases we have to introduce proxy computers we cannot directly interact with client so one proxy computer will support 50 computers so 50 x 50=2500 machines can be  supported so this type of architecture is called THREE  TIER ARCHITECTURE so here i can access 2500 computers and example for this railway reservation system now i want to access the computers all over the world means i want to devlop an application which can be accessed all over the world and i shouuld cover all the computers in the world then we go for N-TIER ARCHITECTURE which is nothing but internet programming or web application we call it that is why we have to learn asp.net .
+
+Advantages of asp.net over asp:
+---------------------------------
+1)Asp.net is completely object oriented we can use what ever language u can prefer to use.
+2)Asp.net is providing extremely rich set of web controls such as gridview and calendar which will make it easier to create great user interface also .
+3)Asp.net is not hard as asp we have to do lot of coding in a single page only and asp.net has full power to access the .net framework class library .
+
+
+Let us see one example on asp and see the diffculties in using it and then we will move to asp.net code 
+so u can refer 
+
+J:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\MyWebFolder  
+
+In this program what u have to do is copy the file from raghuasp.netdemos to iis web publishing folder and call the index page 
+
+C:\inetpub\wwwroot
+
+so in the above directory u copy it .
+
+the path for execution is 
+
+http://localhost/MyWebFolder/index.html
+
+
+u can see the web page there 
+
+check view source for the web page and u can just analize the program and u can see this is a static html page not xhtml page 
+and i have used stylesheet also in this 
+
+so in the same manner u can analize .asp page also in the MyWebFolder example .
+
+
+Note : SO NOW JUST GO THROUGH LESSON1 OF TOTAL TRAINING VIDEOS FOR CLEAR CUT EXPLANATION OF IT  .
+
+so in web applications in between client and server many proxies are used.
+
+windows application works on tcp/ip protocol which is stateful protocol and low level protocol.
+
+web application works on http protocol which is stateless protocol and high level protocol.
+
+statefull protocol remembers request and response values and stateless protocol remembers only current request and response values only.
+
+ASP.NET  is a specification  so specification means set of rules to implement the technology and asp.net is server side specification in asp.net by default we can use Internet Information services web server.asp.net works on http high level protocol and 80 port using asp.net we can implement n-tier architecture projects.In asp.net we can integrate C#.net,VB.net ,J#.net and some other dotnet technologies .In asp.net we can use html controls ,html server controls and also web server controls which we will be seeing later .
+
+Q)what is the difference between low level protocols and high level protocols ?
+
+sol)Tcp/ip are low level protocols and they are connectionoriented protocols means there will be always connection as it is always connected it will remebers all requests and responses values but when no of requests increases load on the server will increase at a time it can remeber few requests not more than that so that is why when i am devloping an application in winforms it works on tcp ip protocol and it can be accessed within a lan or wan not all over the world because at a time it can handle few requests only and here network consumption will be more and decreasing the application performance.
+
+
+But web application supports high level protocols once the request is done it sends the response and forgets it if u call it again it will tell who are u? because after providing response connection is removed and it is connectionless protocol imagine all over the world people are accessing yahoo.com so load will increase in order to avoid this we connect while asking and after getting response we remove connection and this will reduce load on the server and netwrok consumption will be less and it will increase tha application performance .
+
+server machine is having physical directory name web server never communicates with physical directory of server means if u want to access yahoo.com home page so that yahoo.com home page will be server machine so what we will do i will create virtual directory with some name myproject and that will communicate yahoo physical directory from there u will get the home page and u store in proxy computer,so in n-tier architecture to communicate virtual directory is used based on no of physical directories that much virtual directores we have to create it is 1 to 1 relationship .
+
+http://localhost/myproject/home
+
+so this is the request we have to pass so web server role is important web server is having collection of virtual directories main virtual directory is localhost and which has got sub directories so it is a logical link between web server and physical directory no actual data avaialble in virtual directory and all.
+
+so we will learn later on from internet how to create virtual directory in windows 7 and now let us move into next part of asp.net 
+
+Two web server are there one is .net framework web server which is inbuilt comes along with vs2005 software and other windows operating system web server which is IIS so when u are using iis u need to use and create virtual directories which we used to do in asp.net 1.1 versions but from asp.net 2.0 there is no need to create virtual directoires and all.
+
+when we are opening a asp.net application click on file menu ,select new,click on websites and select asp.net websites from the templates window
+
+so in location :
+filesystem--->if u choose this option no need to create physical directory and virtual directory and u are using IIS from the     
+              .net framework .when we are using this location we can access webserver from .net framework 
+			   file system :f:/7:00 AM /first like that .
+               No need to install IIS server on your development computer without iis server only it will run and no need to   
+			   configure it anything.
+http--->when we are using this location we can access webserver from the operatin system (IIS from the operating system)
+        in yahoo some physical directory in my computer drive i want to create my project for that a virtual directory myyahoo is 
+        created with alias name  and we call like this http://localhost/myyahoo/first like that
+		here u are creating an iis website on local computer or in the remote computer and here visual studio will use http to 
+		to communicate with target computer.The target computer must have IIS 5.0 or later and asp.net 2.0 installed on it .
+		
+
+ftp--->when we working on some remote server and when we are transferring files from one application to another system 
+       then we go for this ftp .we can access file transfer protocol features .here u can work on the websites which are hosted in 
+	   another server and it is a server used for commericial hosting service and visual studio uses ftp to communicate with the 
+	   target computer in this situation .
+	   
+	   
+Note: when we place the controls we see that that controls are arranged in flowlayout manner from left to right and from top to bottom and  cannot move the controls as we want them to move like in winforms application the reason for this is that to avoid browser incompatiblility when it comes to absolute positioning of controls.so if u want to have controls in proper positioning we go for table tags  which we will doing on later on 
+
+Every control of asp.net is capable of handling events and events are handled in code behind file for your web page . The class usually has same name as that of your web page  and as we are seeing _Default because in visual basic this is keyword so i am usng underscore to avoid that conflict.
+
+All asp.net web pages inherit from page class u can see in the code behind window itself this thing.
+On the top of web page we have seen in page directive AutoEventWireUp which means that when i click some button automatically i am seeing some onclick event in source code which is nothing but it is happening becuase i have kept AutoEventWireUp as true .
+ 
+Every control we create and use in asp.net will have an instance variable with that name only .that is why when i say buttonclick event the corresponding button with that name is clicked.
+  
+
+  
+
+	   C#.net(windows)---->1)design mode 
+	                       2)code mode 
+						   
+	   asp.net (web app)-->1)design mode 
+	                       2)source code mode(in designing only for designing  manually )
+						   3)code behind window(like C#.net )
+
+
+There will be two types of validation client side and server side client side validation is done in source mode and server side validation is done in code behind mode so when we are opening a website we are getting Default.aspx page this page will have 3 modes 
+
+1)design mode
+2)source mode 
+3)code behind window 
+
+and web page extension is .aspx and web page logic is stored in .cs file so our total information should be hosted on server and webserver controls are controls in design mode. whatever  logic is in source code it communicates with the client and whatever logic is in code behind window it will communicates with the server.
+
+it is upto to us whether we want to do client side or server side validation .
+
+so let us see the difference between client side validation and server side validation imagine you are having a textbox and a button kept in design mode now on button which is html button i am doing client side validation that is in textbox anybody entering less then 5000 it will prompt or show some value just like that so onclik event of button i am using and for doing server side validation i am using textchange event of textbox and this textbox is not html controls but it will run at server side so the source code for all program is mentioned below.
+
+code in source code :
+----------------------
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+   <script type="text/javascript"  >
+     function test (x)
+     {
+     n=parseInt(x);
+     if(n < 5000)
+     {
+     document.write ("no should be above 5000");
+     
+     }
+     }
+  
+  
+   </script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:TextBox ID="TextBox1" runat="server"  OnTextChanged="TextBox1_TextChanged" Style="z-index: 100;
+            left: 207px; position: absolute; top: 159px"></asp:TextBox>
+         <input type=button  name=ok  value="largest "  OnClick="test(TextBox1.value)">  
+
+    </div>
+    </form>
+</body>
+</html>
+
+code behind logic for textchange event :
+-----------------------------------------
+public partial class _Default : System.Web.UI.Page 
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void TextBox1_TextChanged(object sender, EventArgs e)
+    {
+        int a = Convert.ToInt16(TextBox1.Text);
+        if (a < 5000)
+        {
+
+            Response.Write("value should be greater then 5000");
+        }
+        }
+}
+
+
+so i am copying whole code from the editor ...
+
+just follow this it will enough it is written clearly here what to be done .
+
+Design Mode : In design mode we arrange html controls ,html server controls and web server controls .
+
+Source Mode : In source mode we can implement client side validations by default in source mode the logic communicates with client 
+              machine,browser means in the browser only we are executing source code of validation.
+			  
+Code Behind Window: The code behind window source code communicates with webserver,in the code behind window we have to use 
+                     integrated language features so 90% of the features we can implement as it is.
+					 just double click on white page of web design u will see code behind window.
+
+Q)how will i know that my program or any html server control is communicating with the server and how will show the difference between html control and html server controls?
+
+sol) 
+In the web page put two button one is html and another html server control when we click html server control observer progrss bar means something is send to server but this will not happen for html controls thats all 
+
+Response Object:
+----------------
+The response object makes communication between server to client and this object is getting from http response class and client will get information from buffer only server has got web page and on that web page i want to print something then we use response.write which is equal to printf function in c and we can include all html tags in it .
+
+You want to write strings directly to the Response buffer in ASP.NET. Every developer has had to write text with Response.Write at some time. This C# tutorial uses the Response.Write method in ASP.NET. This method outputs data to the page.
+
+so the first method of response object is write only and this method is used to print information on the web page in write method all html tags should be enclosed in doube quotes " " .
+
+Response. write method :
+________________________
+for demo in response.write method refer 
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\responsewritedemo
+
+source code for button click :
+------------------------------
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "this is first program in asp.net" + "<h1>");
+    }
+jsut run the program to see the output 
+
+Display images using write method :
+___________________________________
+using response write method i want to display images and here i am using html image tag for that 
+
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\displayimagedemo
+
+source code for it :
+---------------------
+open new web application 
+      |
+double click on deafult.aspx web page 
+     (getting page load event )
+	 
+	 
+protected void Page_Load(object sender, EventArgs e)
+    {
+        for (int i=1; i <= 10; i++)
+        {
+            Response.Write("<img src=download.jpg/>");
+
+
+        }
+    }
+so u have to import image into to the solution explorer without fail using file -->add exsisting item --->select image and import it .
+
+Note : In this if i am keeping url it will not work as this is not a desktop application to take path or consider path all things which we need has to be kept in server which is solution explorer and path can be followed in server like if images folder is there and under which u have images then url can be used like \images\merlin.jpg etc like that .
+
+Response.Redirect Method :
+_________________________
+
+This method is used to call web pages from the server machine and using this method we can access web pages from single physical directory so it is nothing but already a page is there in server machine and u want to call it then u go for response.redirect method but u want to write something on page or print something on page then write method u have to use .
+
+example on redirect method :
+----------------------------
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\redirectdemo
+
+open new web application 
+          |
+		  |
+add two text boxes controls 
+          |
+		  |
+add one button control 
+
+so now two text boxes and one button is added into the form of default.aspx page now i want to add another web form 
+
+go to solution explorer
+         |
+		 |
+right click on the project 
+         |
+		 |
+click on add new item 
+         |
+		 |
+select web form and change its name to inbox.aspx 
+         |
+		 |
+click on add button 
+
+so now in physical directory memory two web pages are there now in button click event source code is 
+
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        if((TextBox1 .Text =="raghu") && (TextBox2 .Text =="bhoomika"))
+        {
+            Response.Redirect("inbox.aspx");
+
+        }
+        else
+        {
+            Response.Write("<h1>" + "wrong value enetered" + "<h1>");
+
+        }
+
+    }
+	
+so we are calling a inbox page so on page load event of inbox page :
+
+   protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "welcomer to inbox page " + "<h1>");
+
+    }
+ 
+Note as per application ,the login page is defautl page to set as start up page in tha application 
+
+    go to solution explorer
+	      |
+		  |
+	right click on default.aspx page
+	      |
+		  |
+    click on set as start page 
+	
+Response object properties :
+______________________________
+whenever we are passing any request to web server we are maintaining buffer so 1st ,2nd response values are from buffer only .
+for application performance we have to maintain buffer.so buffer is temperory memory loaction the web server maintains . 
+or we can call it as proxy machine also from where we will get information instead of directly from the server.
+
+But as a programmer we can maintain buffer in server machine,proxy machine and also in client machine.
+
+it has two properties true and false 
+
+when it is true we will get complete information in single shot and when buffer proeprty is false getting information in shot by shot and this type of logic is used in home pages of websites.
+
+example on buffer property :
+----------------------------
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\bufferdemo
+open a new web application 
+        |
+		|
+		|
+double click on default.aspx we will get page load event and write this code 
+
+ protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Buffer = true;
+        for(int i=1;i<20000;i++)
+        {
+            Response .Write ("<img src =download.jpg>");
+
+        }
+
+    }
+
+Note:observe scroll bar by changing it to true or false the buffer property in the code.
+
+
+example on cachy and expiry properties :
+---------------------------------------
+Expires: This property is used to set the buffer expiry time and this takes value in minutes.
+ExpiresAbsolute :using this property also we can set buffer expiry time and this takes value in            
+                 years,months,days,hours,minutes,seconds and milliseconds.
+				 
+CacheControl : using this property we can decide that from second request onwards all the request we have to send to buffer machine or to the server machine and this is having two possible values public and private also .
+
+when cache control property is public first request communicates with physical directory memeory and second request onwards all request communicates with buffer memeory and and after buffer expiry time again the request communicates with physical directory memory .
+
+when cache control is private all request communicates with physical directory memory so no need to use buffer when it is private so a below example demonstate this well 
+
+so when we are watching cricket matches or playing online games then it is kept private otherwise it will be public always .
+
+so similarly we can store server machine time also ...
+
+
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\cacheandexpirydemo
+
+  protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.CacheControl = "private";
+        Response.Expires = 1;
+        Response.Write("<h1>" + DateTime.Now.ToString());
+
+
+    }
+    //try to understand the logic 
+    //buffer time of expiry is one  minute
+    //so if we dont press referesh button then as buufer expiry time is
+    //over it will not show new fresh value as we have mentioned above as public
+    //so we can see through the buffer so when we referesh we will see the 
+    //value chaned.so this type of situation is used for increasing the 
+    //application but when some cricket match is goin on u want live updates
+    //of match then keep it private it directly communicates with the server.
+    //means in both the cases we have to press refresh button but in first case
+    //of public refresh button will not work untill buffer expiry time is reached.
+
+    
+}
+
+Note : dont call the page again to see the difference u have to press f5 and the u can understand what there written is correct or not like that .
+
+Response object status properties :
+___________________________________
+
+status: 
+
+This property is used to get the status information from the web server and in asp.net IIS webserver maintains 5 types of status.every status page is having status code and status description using this property we can get status code and description.
+status code returns status error  number and the status description property returns status information.
+
+suppose previsously in some example we addded inbox .aspx page if that page is not there in the server then 404 error we get and description will be something like page not found .so Microsoft classified these errors in this way ..
+
+100+  unknown status 
+200+  successfully completed status 
+300+  client side status 
+400+  server side status
+500+  other status
+
+
+content type:
+
+This property is used to convert the web page mode by default all web page mode supports text/html format,using MIME type we can convert the web page mode also and content type property depends on oledb concept 
+
+MIME(Multipurpose Internet Mail extension) types are like this
+
+text/html
+image/gif
+image/jpeg 
+
+like that 100's of MIME types are available in market we can call any application from O.S like calculator  etc just like that for adding application objects
+
+"application/vnd.MS-excel";
+
+example on status properties and content demo  :
+-------------------------------------------------
+
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\statusandcontentdemo
+
+In default page inculde two buttons and include one webform and give it the name excel.aspx
+
+so  on clicking first button the code is like this 
+
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + Response.Status.ToString() + "<br> ");
+        Response.Write(Response.StatusCode.ToString() + "<br> ");
+        Response.Write(Response.StatusDescription.ToString() + "<br> ");
+
+    }
+   
+
+
+and on clcking second button  the code is like this 
+
+protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("excel.aspx");
+
+
+    }
+
+and finally the reason to appear that excel.aspx page in the form of excel way is that in page load event u have written the following code :
+ 
+ protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.ContentType = "application/vnd.ms-excel";
+    }
+	
+
+Request Object :
+_______________
+The request object makes communication betweeen client to server ,request object getting from httprequest class and request object gives client machine information .request object properties are like this
+
+browser: This property returns client machine browser information .
+path : This property returns application virtual path 
+physical path:This property returns applications physical path 
+Useragent : This property returns browser agent information ,internet explorer browser agent is mozilla
+
+example on request object :
+---------------------------
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\requestobjectdemo
+
+open website and add two buttons to it on click of first button few values from request object and on clicking second button which language i am using u can just see the souce code now down .
+
+protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + Request.Browser.Browser.ToString() + "<br> ");
+        Response.Write("<h1>" + Request.Path.ToString() + "<br> ");
+        Response.Write("<h1> " + Request.PhysicalPath.ToString() + "<br> ");
+        Response.Write("<h1> " + Request.UserAgent.ToString() + "<br> ");
+        
+    }
+  
+  protected void Button2_Click(object sender, EventArgs e)
+    {
+        IEnumerator ie;
+        ie = Request.UserLanguages.GetEnumerator();
+        while (ie.MoveNext())
+        {
+            Response.Write("<h1> " + ie.Current.ToString());
+
+        }
+
+
+    }
+	
+	
+Note :NOW U GO THROUGH LESSON2 VIDEOS ADDING CONTROLS TO WEB PAGE NOW FULLY WHICH IS OF 67 MIN .
+
+	
+ASP.NET CONTROLS :
+__________________
+
+There are 3 types  of controls 
+
+1)HTML intrinsic controls 
+2)HTML server controls 
+3)Webserver controls
+
+HTML intrinsic controls: 
+--------------------------
+Using html controls we can implement client side validations ,all html controls communicates with client machine browser,they dont have more properties defined for it  and also dont have server side events and for style we can use stylebuilder dialogbox using that i can set some styles to html controls which will be added to source code automatically.All html controls are not available in toolbox sometimes we have to write the code manually like hyperlink controls If we seeing html controls in source code and typing space it will list out all the event and properties i can put for html controls and all can be executed in javascript only and all are client side events in this but one event is there which is onserverchange event of html controls which will execute at server  side which we will see later on how to do that .
+
+<input type="button" name="b1"  value="click" />
+
+if we double click the control we will get client side code and it can be integrated with javascript like this.
+
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function Button2_onclick() {
+
+}
+
+// ]]>
+</script>
+
+
+
+html controls can be converted into html server controls by right clicking on it and saying run at server we will get an 
+attribute extra like this
+
+<input type="button" name="b1"  value="click" runat="server" />
+
+now if we click the button we will get code behind window 
+
+the main disadvantage of html controls is You would need to code for the browser compatibility .
+
+so let us write one program on html controls to demonstrate the use of html controls now 
+
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\htmlcontrolsdemo (video 6 ,7 ,8 ,9 and 10   is showing html controls demo )
+
+so we have to add runat server tag to make it use of it easy and it will treat html controls as an .net object present in the current page class  and again and again u have to write code manually for select and check box controls in source code and no labels u can put for that u write manuallt in table and .value u will use instead of text in html controls and for this html server controls u will not find click event from source code only u have to write and event handler means u will not see clcik event in properties window okay so so these are certain drawbacks because of which we are going asp.net web server controls which make coding easy 
+
+
+so this u have checked already in videos above .
+
+and then refer refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\webcontrolsdemo (video from 11 to 13  is on web server controls )
+
+so this also u have checked already in videos above in NOTe section 
+
+
+
+HTML server controls :
+-----------------------
+using html server control we can implement server side validations and html server control logic executes in web server they dont have style properties but only server side events .
+
+<input type="button" name="b1"  value="click" runat="server" />
+
+for this u can refer :
+
+
+
+
+Advantages:
+
+1. The HTML Server Controls follow the HTML-centric object model. Model similar to  HTML
+2. Here the controls can be made to interact with Client side scripting. Processing would be done at client as well as server depending on your code.
+3. Migration of the ASP project thought not very easy can be done by giving each intrinsic HTML control a runat = server to make it HTML Server side control.
+4. The HTML Server Controls have no mechanism of identifying the capabilities of the client browser accessing the current page.
+5. A HTML Server Control has similar abstraction with its corresponding HTML tag and offers no abstraction.
+ 
+Disadvantages:
+1. You would need to code for the browser compatibility.
+
+
+HTML server controls are HTML tags understood by the server.
+HTML elements in ASP.NET files are, by default, treated as text. To make these elements programmable, add a runat="server" attribute to the HTML element. This attribute indicates that the element should be treated as a server control. The id attribute is added to identify the server control. The id reference can be used to manipulate the server control at run time.
+ 
+Note: All HTML server controls must be within a < form > tag with the runat="server" attribute. The runat="server" attribute indicates that the form should be processed on the server. It also indicates that the enclosed controls can be accessed by server scripts.
+
+ASP.NET Server Controls or web server controls :
+--------------------------------------------------
+They have the same functionlity as html controls do have but prefix by asp when we press space we will see intellisense window and where we can see more no of list of properties  and events for webserver controls compare to html controls.
+
+web server controls are introduced in asp.net using web server controls we can implement server side presentations and all web server controls have predefined logic and they have flexible server side events and style properties as well.In web server control microsoft implemented standard controls,data controls,xml integration controls,validation controls,login controls ,navigational controls and web part controls.
+
+web server control will have a prefix asp 
+
+<asp:button id="b1" value="click" runat="server" />
+
+Advantages:
+
+1. ASP .NET Server Controls can however detect the target browser's capabilities and render themselves accordingly. No issues for compatibility issues of Browsers i.e page that might be used by both HTML 3.2 and HTML 4.0 browsers code to be written by you.
+2. Newer set of controls that can be used in the same manner as any HTMl control like Calender controls. (No need of Activex Control for doing this which would then bring up issues of Browser compatibility).
+3. Processing would be done at the server side. In built functionality to check for few values(with Validation controls) so no need to choose between scripting language which would be incompatible with few browsers.
+4. ASP .NET Server Controls have an object model different from the traditional HTML and even provide a set of properties and methods that can change the outlook and behavior of the controls.
+5. ASP .NET Server Controls have higher level of abstraction. An output of an ASP .NET server control can be the result of many HTML tags that combine together to produce that control and its events.
+ 
+Disadvantages:
+
+1. The control of the code is inbuilt with the web server controls so you have no much of direct control on these controls
+2. Migration of ASP to any ASP.NET application is difficult. Its equivalent to rewriting your new application
+
+
+Web server controls are special ASP.NET tags understood by the server.
+Like HTML server controls, Web server controls are also created on the server and they require a runat="server" attribute to work. However, Web server controls do not necessarily map to any existing HTML elements and they may represent more complex elements.
+ 
+The syntax for creating a Web server control is:
+< asp:textbox id="Textbox1" runat="server" />
+These also case insensitive. Here important thing is compulsory to write runat="server". For HTML controls this is optional.
+ 
+ 
+points of differences :
+------------------------
+1)The difference is that html server controls have syntax and rendering closely mapped to html objects.  Where as web server controls have more relation to the .NET Framework. Web server controls have a richer and wider range of special purpose controls.  Calenders, tree views, etc.
+
+2)There is no fuctional difference between the two. The purpose of the HTML Server Controls is to make it easier to migrate a standard HTML page to an ASP.NET page. It's really a convience feature, just to have the option to use both.
+
+Note : if we want to display large amount of data to the user we go for data controls tab controls only.
+
+Note: In html controls designer is not cabable of doing everything and we have to write the source code manually for many controls 
+      but they are straight forward and we have to do lot of quite of work to write and run the code manually .
+	  and we have to put runat=server for html controls if we really want to access the control via a net object
+  
+Note : It is much easier to u use high level controls compared to html level controls.
+ 
+
+Addrotator control:
+____________________
+
+In addrotator control we can display collection of adverstisements simaltaneously.This add rotator control will rotate adverstisements automatically when the web page is refreshed.This control is designed using xml and using xml predefined tags
+we can set advertisements.
+The AdRotator control is used to display a sequence of ad images.
+
+This control uses an XML file to store the ad information. The XML file must begin and end with an <Advertisements> tag. Inside the <Advertisements> tag there may be several <Ad> tags which defines each ad.
+
+AdRotator is one of the Rich Web Controls available in ASP.NET. AdRotator control is available in ASP.Net to make the task of rotating the advertisement images in a web form quickly and easily.
+
+It displays flashing banner advertisements randomly. It also enables you to display different types of images whenever you refresh the page. Adrotator control takes the information about the images that are to be displayed from an XML file which also have many other elements in it that are used by this control.
+
+example on adrotator control :
+--------------------------------
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\addrotatordemo
+
+include one.aspx and two.aspx file and one xml file also with name setxmlfile.xml and any two images also here the images are IMG_0017.jpg and IMG_0025.jpg images .
+
+in xml file write the following code :
+
+<Advertisements>
+  <Ad>
+    <ImageUrl>IMG_0017.jpg</ImageUrl>
+    <NavigateUrl>one.aspx</NavigateUrl>
+    <Impressions>5</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>IMG_0025.jpg</ImageUrl>
+    <NavigateUrl>two.aspx</NavigateUrl>
+    <Impressions>5</Impressions>
+  </Ad>
+</Advertisements>
+
+so 
+
+1)Advertisements:In Advertisements xml tags we can combine collection of advertisements 
+2)Ad :Using this tag we can define one advertisement.In the Ad tag we have to set Advertisement image,advertisement redirecting web page and advertisment priority .
+
+3)ImageUrl:using this tag we can set advertisment image (remeber u have to include image in solution explorer and if seperate folder for images is there the /images/name_of_image file like that it goes dont take it from d: or some other drive because we are working on web application somewhere in internet )
+
+4)NavigateUrl:using this tag we can set advertisements redirecting web page.
+
+5)Impressions: using this tag we can set advertisement priority.
+
+so this is the description of xml file in detail 
+
+In Default.aspx page put adrotator control and  assign its AdvertisementFile property to setxmlfile.xml and 
+go to the source code of the aspx page and include following code after head tag to refresh the web page every 2 seconds like that 
+
+<meta http-equiv ="refresh" content ="2" />
+
+ write the following code in page load events of one.aspx and two.aspx pages 
+ 
+  protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "information of first page" + "<h1>");
+
+    }
+	
+	 protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "information from the  second page" + "<h1>");
+
+    }
+
+	so this because when advertisement is changing u will u will click and then on click u will land to that page and while loading i should know which page i can see if i click this image like that..
+
+you can also inlcude flash also in this adrotator controls .	
+	
+finally set Default.aspx page as starting page and run and see the output also .
+
+
+ImageButton Control :
+______________________
+
+In imagebutton control we can display one image .Image button control click event gives image button control x co-ordinates and Y- co-ordinates values .so depending on x and y co-ordinates we can navigate multiple web pages.
+The ImageButton control is used to display a clickable image.
+
+
+example on imagebutton control :
+---------------------------------
+now what we will do is that we will integrate one image with imagebutton control and based on the co-ordinates of x axis values we will jump to different webpages like that .
+
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\imagebuttondemo
+
+first go to mspaint and create some image like hello.bmp which contains C#,VB ,Asp.net written on it 
+and import the image in the solution explorer and add three web pages with names one.aspx,two.aspx and three.aspx.
+
+and add imagebutton control on Default.aspx file 
+
+now double clik on imagebutton control and write the following code :
+
+and to the ImageButton ImageUrl property add hello.bmp file dont forget that and already check the co-ordinates in mspaint from x axis for C# ASP and VB words in paint
+
+based on that I am writing below code like this 
+
+  protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Write("<h1>" + e.X.ToString());
+        if (e.X > 30 && e.X < 87)
+        {
+            Response.Redirect("one.aspx");
+
+        }
+        else
+            if (e.X > 121 && e.X < 190)
+            {
+                Response.Redirect("two.aspx");
+
+            }
+            else
+            {
+                Response.Redirect("three.aspx");
+
+            }
+
+    }
+}
+Note that here i am not using xml file for naivgation but using redirect method if u are good in photoshop u can create very good images of your comppany and logos and jump by using a single imagebutton control like above .
+and u can write following code in each page load events of page like this
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "About C # page " + "<h1>");
+
+    }
+	
+ protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "About asp.net " + "<h1> ");
+
+    }
+	
+protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "About VB .net " + "<h1>");
+
+    }
+	
+	so this much is code about imagebutton control .
+	
+	
+	
+Validation Controls:
+____________________
+All input controls we have to validate ,so now ready made methods are available in .net in the project 20% of time goes in validation so now using validation controls that problem can be solved.validation controls are used to validate the web server control values the validation controls are designed using javascript,validation controls can work in client side and aswell as server side and validation controls logic is implemented using onblur event and onsubmit event.
+
+All validation controls generates WebUIValidation.js file ,this file is having all validation controls logic ,one validation control contains one web server control value only and webserver control may have collection of validation controls 
+so when ever u are keeping any validational control on the page it automatically generate webuivalidation.js file 
+and onblur is client side event and onsubmit is server side event that is why i told these controls can be implemented both server side and client side also .
+
+This set of controls provide Rapid Application Development (RAD) features for automatically checking the specified validity of user inputs. These controls are available in the System.Web.UI.WebControls namespace.
+
+Multiple validators can be associated with each control and only one control is validated by each validator at a time
+
+
+
+One of the most tiresome tasks when building interactive web applications is the requirement for validating values that the user enters into the input controls. This is particularly the case if we need to perform client-side as well as server side validation. Mostly, we use JavaScript for client side coding. Help is at hand with the range of validation controls that are included in ASP.NET.
+
+They cover almost all the validation scenarios. A validation control enables us to validate an input and display an error message if necessary. It is very much like other server-side controls, with certain additional methods and properties. First, the server treats it as an invisible control. After the user has entered erroneous data, it becomes visible. It is a powerful, rapid application development feature; however, a developer needs to understand its behavior and the methods thoroughly before he or she can appreciate it. All the validation controls inherit from the base class BaseValidator, which is part of the class library namespace. System.Web.UI.WebControls.BaseValidator exposes a series of properties and methods that are common to all the validation controls.
+
+
+
+asp.net supports six validation controls
+
+1)required field validator
+2)range validator
+3)regular expression validator
+4)compare validator
+5)validation summary 
+6)custom validator
+
+in first 5 controls microsoft implemented logic and last one logic should be implemented by the user which we are going to see now in examples 
+
+
+Required Field Validator :
+--------------------------
+This validation control is used to check assigned control is empty or not.if assigned control is empty this validation control provides validation summary 
+
+properties:
+
+control to validate:This property is used to assign one web server control in the validation control means to which control u are validating
+
+errormessage:this property is used to set validation summary ,when web server control value is not validated this error message will be displayed.
+
+
+Range validator :
+--------------------
+This control is used to check specified range values having in the associated control or not ,if associated control value is not in specified range this validation control provides validation summary 
+
+properties :
+
+it is used for strings,date,float and integers.
+Minvalue:using this property we can set minimum range in validation control
+MaxValue:using this property we can set maximum range in validation control 
+Type: which type of data type available in associated control 
+
+Regular expression validator :
+------------------------------
+This control is used to check predefined formats in the associated controls .using this control we can check e-mails address,URL addresses ,H.NO,Company ids cell phone nos etc
+
+properties:
+
+validationexpression:using this property we can set predefined formats ,this property having collection of predefined expressions.
+
+Compare validator :
+---------------------
+using this validation control we can check whether two webserver controls values are same or not ,when the webserver control 
+values are not matching this validation control provides validation summary 
+
+properties :
+
+controlto compare :
+using this property we can compare values with the assigned control when controltovalidate property and controltocompare property are matching and this control does not executes error message property internally 
+
+Validation summary :
+--------------------
+
+This control works at server side only previous 4 will work both server side and client side .In this control we can display collection of validation error messages.
+
+
+example on validation controls :
+--------------------------------
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\validationdemo
+
+
+just analize the program by opening because there is nothng like coding in this.
+
+custom validator:
+----------------
+custom validator control is controlling one web server control value using user defined logic this validation works at server side only it is having server validate event using this event we can get associated control value and we can check whether the value is validated or not .servervalidate () event is having arguments is args
+
+This argument is having two properties 
+
+1)value:using this value property we can get associated control value
+
+2)Isvalid: using isvalid property we can check the entered value is valid or not this is having two possible values one is true and other is false .when isvalid property is true the entered value is validated and when it is false ,the entered value is not validated according to user and we have to display  error message.
+
+example on custom validator :
+----------------------------
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\customvalidatordemo
+
+CustomValidator control is used to validate a input control with user-defined function either from server side or client side. Generally this control is used when you feel that no other validation controls provided out of the box in asp.net fit in your requirement. The interesting stuff in this control is that you have ability to validate your input data both from Client side using JavaScript and Server side by writing your code in code behind file in any of the .NET supported programming language.
+
+put one textbox and for that custom validator and below one button also and put control to validate property of custom validator to that textbox and errormessage write your own message and then doube click on custom validator control to get server_validate() event and it and it is taking args as argument and source code is below mentioned 
+
+protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        int esal;
+        esal = Convert.ToInt32(args.Value.ToString());
+        if (esal % 2 == 0)
+        {
+            args.IsValid = true;
+
+        }
+        else
+        {
+            args.IsValid = false;
+
+        }
+
+    }
+	
+	so the logic is the number which we are entering in the textbox if divisble by 2 then no error mesage will be thrown otherwise an error message what i have kept in property will be shown and i have kept button because it is server side event and only when u press it will be validated at server side and this is the button which will host the information on the server .
+	
+	so here client side requirement is satisfied by custom validator control only.
+
+
+If none of the other validators can help you, the CustomValidator usually can. It doesn't come with a predefined way of working; you write the code for validating your self. This is of course very powerful, since the possibilities are basically endless. A common way of using the CustomValidator is when you need to make a database lookup to see if the value is valid. Since this tutorial hasn't treated database access yet, But i have given  a simpler example on this above.
+
+u can refer videos more clearly every thing is mentioned but when u are going to give this demo to students remove this sentense otherwise students will ask for videos from  u.
+
+Note : REFER TO VIDEOS ON VALIDATION AT THIS url  J:\Total_Training_Of_Asp.net\one\TASP2W1_P1\VIDEO\L04
+
+
+WEBSITE NAVIGATION IN ASP.NET :
+-------------------------------
+
+Note : REFER THE FOLLOWING VIDEOS URL J:\Total_Training_Of_Asp.net\one\TASP2W1_P1\VIDEO\L05
+
+ASP.NET EXECUTION  FLOW  AND PAGE LIFE CYCLE : 
+_______________________________________________
+
+Before going into this below notes just read the following videos well below 
+
+J:\Total_Training_Of_Asp.net\one\TASP2W1_P1\VIDEO\L03
+
+In this we will see exactly what happens when the page gets executed and what and all files are executed ,we will see how asp.net creates a page object on the web server  and how it intilizes all controls in the web page .
+
+In asp.net always we are executing four files 
+
+1)machine.config file 
+2)web.config file
+3)global.asax file
+4)webpage.aspx file (in this we having  init,load,prerender and unload events)
+
+
+1)machine.config file : 
+
+This is designed using xml file and webserver sends configuration settings values via machine.config to the asp.net web application .This file is present in C:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG location in your machine so it is just like hardware settings of server machine and any modification u are doing in this file will not allow ur asp.net page to execute also.
+
+so it defines configuration information for the entire computer,so every .net application which  is running on this computer 
+uses these configuration settings as their default.it has got various sections like application specific settings and database connections settings as a web developer we have to concentrate on <system.web> section of this file 
+
+
+2)web.config file:
+
+There are actually two web.config file one is located in .net framework directory which is  C:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG and another in our website for our application which we are running so the main difference are like this
+
+This defines default settings for every web application running on this web server. again if u open here also we can see lot of information and go into <system.web> section it defines authorization ,browser capabilities ,different types of browsers it can support in Clienttarget tag and then when coming to <compilation> tag it tells that different types of assemblies available readymadely when we are compiling an application .then if we scroll down we can see httphandlers tag in this we can see we have kept some .cs and .web.config file to be forbidden so that no body can copy or download our source code through .cs file and no body should copy web config file of application also becuase it contains security information for the website like this we are contrlling lot of things in this .net frameworks web.config file 
+
+and when coming to normal web.config file of application this is file which will execute after machine.config file but it will take setting values from .net framework web.config file and web.config file of application is used to give instructions to application at design time and as well as at run time.
+
+This file is at the application level and we can use multiple web.cofig files in an application and it has got many uses like application settings,custom errors and many more which  we will be seeing later on in the configuration section of 
+this notepad notes.
+
+3)Global.asax file :
+
+The Global.asax file we can start session state and application state here application state  maintains state after closing the application in global.asax file and application state maintains state untill modifying the source code in the global.asax file .
+In this file we check how many times the user has logged in and how many times the website is visted so this file will execute if it has any seesions for the user .
+
+
+4)Finally the webpage.aspx of my application will execute which is Default.aspx page and for clear cut explaination i am going for 
+a program refer  E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\pageprocessingdemo 
+
+which has got everything ...by explaining the program step by step we will inculde all init ,load,prerender and unload events in asp.net
+
+here we will enter the name of the user who will give the travel plans for this year and last year let us go dep now
+
+
+Add one label ,textbox and listbox first and set their characteristics also well according to program u can see that in program 
+
+label
+
+ID=Welcomelabel
+text=Enter your name and travellin details for this year or last year
+
+
+textbox 
+
+ID=nametextbox
+
+listbox
+
+id=Countrylist
+
+so u can better just refer video for ur understanding and also corresponding program of pageprocessingdemo i will just include new points to be added and new defnitions in this now or what i will do is i will try my best for to write code in this example
+
+now i will fill the listbox programaticlly now 
+
+so for this in the pageload event of the page i am going
+
+so generally in the page load event we do programmatic intialization of our web page.
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            CountryList.Items.Add("USA");
+            CountryList.Items.Add("UK");
+            CountryList.Items.Add("Canada");
+            CountryList.Items.Add("India");
+        }
+      
+    }
+
+page class is having a static and shared proerty is ispostback that helps u differentiate between whether this has been the first time whether page has been requested or its a subsequent postback .
+
+so better u go with website i will just include code like above in website u will  understand everything and video as well 
+
+so in the program after desinging we have intialized statically the label control and then textbox user will intialize and listbox is intialized programatically and finally timespamp u have to again programatically intialize it.
+
+and we can see that we cant put it in mark up code as it has to change constantly so we have to do programming for this
+so i am keeping this code after postback i want it to load evrytime and this will show a new time everytime okay
+here we have to intialize the timestamp every time so write like this 
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            CountryList.Items.Add("USA");
+            CountryList.Items.Add("UK");
+            CountryList.Items.Add("Canada");
+            CountryList.Items.Add("India");
+        }
+       TimeStampLabel.Text = DateTime.Now.ToString();
+    }
+
+now  i am going for event handler code for the buttons and i am going to keep more generic name for the button event same button click event will be shared by two buttons so one good name i will keep as i have to claculate this year and last year 
+
+so here u can see in the program it is remebering the previous values when i click second time it should forget that is not happening also so what is this?
+
+so this mechnism is called view state .it is remembering all the actions done previously on the web page .
+
+so we have to consider six steps over here ...
+i have kept break points in pageload() event fist line that is at ispostback and in event handler of button click event first line also  and run with debug option now 
+
+
+when we are seeing is it hit the first method page_load event now what do u think page load event is called first in the page 
+but some intilization in the form of static manner has laready happened so let me explain now
+
+when we visted a web page asp.net created an instance of our web page class which is _Default
+and it created child controls inside my default class for each run at server controls like label ,listbox etc controls
+The deault values for this control is set according to the mark up or in source mode what we intialize there first intialization takes place .
+
+so in souce mode for welcomelabel the text property is the first intialization which takes place 
+so asp.net creates label object welcomelabel and intilize it with "enter ur name and travelling details "and all this happens before page load event to prove that use quickwatch and enter the label id and see it will show intialized value for it 
+so try for countrylist it will not show anything and indirectly i am saying that static intialization happens first .
+so if u have static intialization best place to put it is in mark up page or source code one.
+
+but if u have to programmatic intialization we have to go for page load event only .
+
+when we reach last } of page load event it concludes intialization of page object .
+
+after this asp.net invokes any event handlers u need to call and now all the states of controls will be stored in view state so view state is just one big string really and just sent back to browser as an input hidden field and that act as a record for us
+so we can say view state is a snapshot of original contents of the web page.now each control in web page has to render itself as html format .so asp.net asks all page controls to render itself as html 
+
+so when we are sending the value second time through textboxes and list boxes as user input value from the user the view state is deserilized and updates with new value in this view state which is second stage of intialization
+
+so to check CountryList.items[0] u will see the country name in quickwatch
+
+so implicitly asp.net calls some methods before load and after load events also u need to override the methods for that 
+
+so now 
+
+oninit method:
+--------------
+This method is called after the page object has been created from the aspx file but before asp.net has updated all the controls with view state.so when u are implementing the oninit method u cannot access the up to date data on controls then what is the use of this method it is genrally used for intializing the user credentials values and database connection values so when we write that method before page load event we use override method and when we write method we can see that the visual studio has automatically called oninit method in the base class and this only triggers the init event in the page.u cannot intialize the controls in this method because view state value has not been given any value before that it is firing and we can do programatic intialization in this method
+
+
+private DateTime timestamp;
+
+    protected override void OnInit(EventArgs e)
+    {
+        base.OnInit(e);
+        timestamp = DateTime.Now();
+
+
+    }
+
+something like this u can intialize for private variables.
+
+after this method asp.net deserilizes view state with new values from textbox like name then it calls page load method.
+
+after various button handlers like button click etc and then 
+
+
+
+onprerender event:
+-------------------
+Just before asp.net tells each controls to render itself as html one.so it is the last stage to change the state of the objects such that it effects html thats about to be rendered.
+
+if u observe previously , application when u enter names such as joseph and then places visted when u click the button the names still exsists like that only so we can remove those names in prerender events .
+
+protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+
+        NameTextBox.Text = string.Empty;
+        CountryList.SelectedIndex = -1;
+
+    }
+
+
+	
+
+
+
+onunload event :
+---------------
+
+when the page is to be discared then finally page unload method is called .
+so this is a good place to u to release any resources that u might have used during the processing of the 
+web page such as database connections or web service proxy object and file handling etc things 
+
+
+so total page code in total is like this 
+
+public partial class _Default : System.Web.UI.Page 
+{
+    private DateTime timestamp;
+
+    protected override void OnInit(EventArgs e)
+    {
+        base.OnInit(e);
+        timestamp = DateTime.Now();
+
+
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            CountryList.Items.Add("USA");
+            CountryList.Items.Add("UK");
+            CountryList.Items.Add("Canada");
+            CountryList.Items.Add("India");
+        }
+        TimeStampLabel.Text = DateTime.Now.ToString();
+
+
+    }
+    protected void TheButton_Click(object sender, EventArgs e)
+    {
+        ResultLabel.Text += string.Format("Countries visited by {0}: <br/>", NameTextBox.Text);
+
+        foreach (ListItem item in CountryList.Items )
+        {
+            if (item.Selected)
+            {
+
+                ResultLabel.Text += "*" + item.Value + "<br/>";
+
+            }
+            
+        }
+        ResultLabel.Text += "<br/>";
+
+    }
+
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+
+        NameTextBox.Text = string.Empty;
+        CountryList.SelectedIndex = -1;
+
+    }
+
+    protected override void OnUnload(EventArgs e)
+    {
+        base.OnUnload(e);
+    }
+}
+
+
+so now coming to synopisis part in step by step 
+
+1)The page was created to intialize itself and its child controls on souce mode or mark up part with static intialization .
+2)Then it calls the oninit method in this any class variables or database intitlaiztion code written means it will get intitlize this is called before view state initlization .
+3)deserilzes view state with values of static intialization only.
+4)Then view state  gets data from form variables to capture latest data such textbox name what the user is entering and listbox which user selects.
+5)Then the page load event is called and as in pageload i am intializing the listbox values get intialed only once here second time on wards from view state it will take something like that no need to go so deep becuase u have gone already very deep.
+6)all event handlers are executed .
+7)Then prerender event is executed .
+8)finally unload event is executed .
+
+Note if u want to intialize the controls on screen u do that in page load event but when u want to intialize an instance variables u do that in oninit method means inside class some private or collection variables will be there we have to intialize them and these things will not appear on screen they are non visual components .
+ so in short  what will happen is 
+ 
+ -->A page was created it intilizes itself with static intialization 
+ -->Then it callled the oninit method
+ -->Then it deserilizes view state to update its intialization 
+ -->Then it gets the data from form variables which is latest set of data .
+ -->Then it calls page load 
+ -->Then event handlers which will chnage th estate of control on button click 
+ -->Then prerender event is called and then finally unload event is called .
+
+STATE MANAGEMENT IN ASP.NET :
+_____________________________
+In  windows application if i am keeping two buttons and in one button i am intializing the value and in another button i am displaying the value it will show what i had intialized but in this will not happen in asp.net 
+ 
+ int a;
+ 
+ button1_click :
+ -------------
+ a=10;
+ 
+ Button2_click:
+ -------------
+ MessageBox.show(a);
+ 
+ output will be a=10 
+ 
+ 
+same thing in asp.net
+
+button1_click:
+--------------
+a=10;
+
+Button2_click
+---------------
+response.write(a);
+
+output will be 0 
+
+
+this is because asp.net works on hight level protocols and after hosting information on the server data is lost so after hosting it is not possible but while hosting we manage the state of variable which is called as state management .
+
+
+HTTP Protocol and the Need for State Management Techniques
+
+Hyper Text Transfer Protocol (HTTP) is a communication protocol which is implemented in the "World Wide Web(WWW)". It is a request/response style protocol. Clients (browsers, spider, etc) will request to a server (web server) and the server responds to these requests. HTTP uses TCP protocol for communication. It connects to a specific port (default is 80) to the server and communicates via that port. Once the response is received completely, client programs will be disconnected from the server. For each request, client programs have to acquire a connection with servers and do all the request cycles again.
+
+ASP.NET files are just text files which will be placed in the server and served upon the request. When a request comes for a page, the server will locate the requested file and ask the ASP.NET engine to serve the request. The ASP.NET engine will process the server tags and generate HTML for it and return back to the client. HTTP is a stateless protocol and the server will abandon the connection once the request is served.
+
+Since HTTP is stateless, managing state in web applications is challenging. State management techniques are used to maintain user state throughout the application. Managing state in a stand-alone application is trivial as they don't have a request/response nature. Information you want to maintain over the lifetime of a web applications depends on your context. It can be from simple numbers to very complex objects.
+
+Understanding the state management techniques play a major role in creating efficient web applications. ASP.NET is very rich in state management techniques. 
+Web pages rarely be stand alone. Web applications almost always need to track users who visits multiple pages, whether to provide personalization, store information about a user or to track usage for reporting purposes.
+
+Purpose :
+
+State management is the process by which you maintain state and page information over multiple requests for the same or different pages. 
+
+
+By default all web specification depending on the high level protocols and all high level protocols are stateless and they remember current request and response to remember previous request and response we have to implement state management 
+asp.net supports 4 types of states
+
+Developer is forced to implement various state management techniques when developing applications which provide customized content and which "remembers" the user.
+
+Here we are here with various options for ASP.NET developer to implement state management techniques in their applications. Broadly, we can classify state management techniques as client side state management or server side state management. Each technique has its own pros and cons. Let's start with exploring client side state management options.
+
+ASP.NET provides various client side state management options like Cookies, QueryStrings (URL), Hidden fields, View State and Control state (ASP.NET 2.0). Let's discuss each of client side state management options.
+
+Bandwidth should be considered while implementing client side state management options because they involve in each roundtrip to server. Example: Cookies are exchanged between client and server for each page request.
+
+1)cookies (client side )
+2)sessions(server side )
+3)Application (server side )
+4)viewstate  (client side )
+
+Hidden field, querystrings and control state we will disscuss later.
+
+
+Cookies:
+---------
+A cookie is a small piece of text stored on user's computer. Usually, information is stored as name-value pairs. Cookies are used by websites to keep track of visitors. Every time a user visits a website, cookies are retrieved from user machine and help identify the user. 
+
+cookies maintain state in the client machine cookie is a text file and in this we can maintain normal string format data ,cookie file which is created is controlled by web server and the cookie file name will be username@domain.txt cookie file 
+and located in 
+
+C:\Documents and settings\username\cookie
+
+same thing in windows 7 is 
+
+go to start menu -->the user name (raghu)--->go to organize --->folder and search option --->view--->show all hidden file --->uncheck protected operating system file --->yes--->ok-->go to appdata-->roaming--->microsoft--->windows--->cookies and finally we can fine all the cookie files 
+
+after knowing where cookies are exactly u can again uncheck and hide the files .
+
+
+
+
+
+
+one website can create only one cookie file and one cookie file can have collection of cookies ,cookies we can seperate using * character and using http cookie class we can create cookies.for username and password we create single value cookies and for registration thing we create multi valued cookie.
+so cookies are of two types :
+
+single value cookie
+multi value cookie
+
+single value cookie :
+---------------------
+in this one cookie name maintains only one cookie value single value cookies we can classify into two types 
+persistent and non persistent cookies,so now persistent cookies having the expiry time and maintains cookie value in cookie file and memeory is allocated in hard disk and they maintian values even after closing the application where as non persistent cookies doesnt have expiry time and non persistent cookie values memeory allocated in RAM memeory  and maintains state untill closing the application only .
+
+example on single valued cookie :
+---------------------------------
+put two textboxes and one button and add one webform as inbox.aspx using add new item from soultion explorer
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\singlevaluedcookiedemo
+
+code in button click event :
+
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        HttpCookie c1 = new HttpCookie("uid", TextBox1.Text);
+        c1.Expires = DateTime.Now.AddMinutes(1);
+        Response.Cookies.Add(c1);
+        HttpCookie c2 = new HttpCookie("pwd", TextBox2.Text);
+        Response.Cookies.Add(c2);
+        Response.Redirect("inbox.aspx");
+
+    }
+
+code for page load event of inbox page:
+
+ protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1> " + Request.Cookies["uid"].Value.ToString() + "<br>"
+        + Request.Cookies["pwd"].Value.ToString() + "<h1> ");
+
+    }
+
+so u can see that. i had created here two single valued cookies .
+
+ 
+Multi valued cookies :
+-----------------------
+
+In multi valued cookie the cookie name will have multiple sub cookies and each sub cookie maintains single value and again they are also classified as persistent and non persistent cookies 
+
+properties :
+
+Allkeys :This property returns main cookie name from cookie file 
+
+Haskeys :Uing this property we can check the cookie name having sub cookies or not and this is having two possible values one is true and false 
+
+values: This property return sub cookie names from the cookie file 
+
+
+example on multivalued cookie :
+--------------------------------
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\multivaluedcookie
+
+first keep three textboxes and one button and add one web form with the name as one.aspx.
+
+button click event code :
+------------------------
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        HttpCookie c1 = new HttpCookie("emp");
+        c1["ename"] = TextBox1.Text;
+        c1["eno"] = TextBox2.Text;
+        c1["sal"] = TextBox3.Text;
+        c1.Expires = DateTime.Now.AddMinutes(1);
+        Response.Cookies.Add(c1);
+        Response.Redirect("one.aspx");
+
+    }
+	
+	page load event of one.aspx page code :
+	----------------------------------------
+	
+	  protected void Page_Load(object sender, EventArgs e)
+    {
+        IEnumerator mc;
+        mc = Request.Cookies.AllKeys.GetEnumerator();
+        while (mc.MoveNext())
+        {
+     ,       if(Request .Cookies[mc.Current .ToString ( )].HasKeys ==true )
+            {
+                IEnumerator sc;
+                sc=Request.Cookies [mc.Current .ToString ( )].Values .GetEnumerator ( );
+                while (sc.MoveNext ( ))
+                {
+                    Response.Write ("<h1>" +sc.Current .ToString ( )+"="
+                    +Request.Cookies [mc.Current .ToString ( )][sc.Current .ToString ( )].ToString ( )+"<br>");
+
+                }
+            }
+
+        }
+
+so this is the example on multivalued cookie u can easily understand the code also 
+
+Advantages:
+
+Simplicity
+
+Disadvantages:
+
+Cookies can be disabled on user browsers
+Cookies are transmitted for each HTTP request/response causing overhead on bandwidth
+Inappropriate for sensitive data
+fj.j.
+some more drawbacks  of cookie :
+--------------------------------
+1)In cookie file we cant maintain reference format data 
+2)As cookie file is located at the client machine the client can edit ,delete the cookie file 
+3)In cookie file we can maintain only 4 kb of information 
+
+
+Sessions:
+_________
+
+Now what i am disscussing will be less only later on u have to go still deep in sessions refer desktop file also and later on go deep and see that u are covering the things better from videos section also means u will have to come back here to write extra information but now follow just naresh technologies only .
+
+
+Sessions are maintaining state in server machine and they store value in object memeory and in sessions we can maintain value format data and reference format data and every session object is having unique session id and session object memeory we can distribute in  project memeory and they maintains state untill closing the application in Global.asax file session_start() and session_end() events are there and session properties are 
+
+TimeOut:This property is used to set the session object expiry time this object takes only minutes and by default session object memory is for 20 minutes
+
+session methods are
+f,j.
+remove:This method is used to destroy the session object here the parameter is passed to which u want to remove 
+
+removeall:using this we can destroy all the session objects in an application
+
+we can maintain dataset information also in sessions which is not possible in cookie
+
+example on seesion :
+---------------------
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\sessiondemo
+ 
+include two textboxes and one button and one web page with name inbox.aspx and on the inbox.aspx page put two buttons one is signout and another is normal button to know whther request is being sent to server or it tells that u are interacting with page 
+generally in mails u vist inbox and check mails like that 
+
+when u click the button create a session for  the user and the source code is like this 
+
+if (TextBox1.Text == "raghu" && TextBox2.Text == "bhoomika")
+        {
+            Session["x"] = TextBox1.Text;
+            Session.Timeout = 1;
+            Response.Redirect("inbox.aspx");
+
+        }
+
+		
+AS i have given time limit of 1 minute upto one minute u can clik the button normal button it will send request to server but when u click the same button after one minute u will come to login page as ur session is over and if u want to come to main page within one minute only or after anytime u have to click signout button here.
+
+
+ code for page load event event of inbox.aspx page 
+ 
+ protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["x"] == null)
+        {
+            Response.Redirect("default.aspx");
+
+        }
+        else
+        {
+            Response.Write("<h1>" + "ok" + "<h1>");
+
+        }
+
+ and code for signout button click event :
+ 
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session.Remove("x");
+
+    }
+	
+	
+ 
+Application State , view state and IsPostBack :
+_________________________________________________
+
+The application state maintains state in server machine and its values are stored in object memeory and it maintains value format data and reference format data and application state values we can access in web project memory and it maintains state after closing the application also every application object having unique application id and we store the value in Global.asax file in application_start() event and the global.asax file maintains application state value untill u modify the source code in the global.asax file .
+
+Application state is used to store data on the application machine. It works as a global variable in other programming languages. Application variable is an object that is shared by the multiple sessions. We can use application variable within page, HttpHandler and Global.asax.
+
+When request a page from client machine, an instance will create at application machine by the help of HttpApplicationState class. Entire application will have only one instance which is provided by HttpContext property named Application. 
+
+How to create Application state?
+f,j.
+It's very easy to create application state in the ASP.NET application. I am going to take you to write simple application state program now.
+
+Example 1:  In the Global.asax page
+
+void Application_Start(object sender, EventArgs e)
+    {
+        // Code that runs on application startup
+        Application["LoginID"] = "annathurai";
+        Application["DomainName"] = "www.annathurai.com";
+    }
+
+Example 2:  Inside the .aspx page
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+
+// Code that runs on page load
+
+        Application["LoginID"] = "annathurai";
+        Application["DomainName"] = "www.annathurai.com";
+    }
+	
+	
+	
+How to retrieve application state?
+
+It's very easy to retrieve application state in the ASP.NET application. I am going to take you to write simple application state program now.
+
+string loginID=string.Empty;
+loginID = Application["LoginID"].ToString();
+
+string loginID = string.Empty;
+loginID = Application.GetKey(0);
+
+We can retrieve all application variable on the currently running application's keys by using HttpApplicationState class.
+
+HttpApplicationState appState = null;
+appState = Application.Contents;
+ 
+String[] StateVars = new String[appState.Count];
+StateVars = appState.AllKeys; 
+
+How to remove application variable?
+
+We have three methods to remove application variable from the ASP.NET application.
+ 
+  Application.Remove("LoginID");
+        Application.RemoveAt(0);
+        Application.RemoveAll();
+
+How to implement Synchronization in application state?
+
+We can avoid deadlock occurrence while we updating application variable by multiple users with help of Lock() and UnLock(). 
+
+        Application.Lock(); 
+        Application["LoginID"] = "annathurai"; 
+        Application["Domain"] = "www.annathurai.com"; 
+        Application.UnLock();
+
+Advantages of application state:
+
+Application object memory relased when we removed.
+Multi user can able to access application variable.
+To avoid deadlock or conflict we should use Lock and Unlock when we use write or update in the application object.
+Other application can't access this application values.
+
+Disadfj.vantages of application state:
+
+Application variable will exists until exit our application.
+If we do not have Lock() and Unlock, deadlock will occur.
+Its gloable variable so anyone can access within this application.
+Conclusion: 
+            
+so u can try above example by practising more on application state and on this topic we will go deep also later on by learning from videos and including some good examples now let us learn viewstate and ispostback concepts and finally write one very good and simple example on combining all the topics 
+
+
+View State and IsPostback:
+_____________________________
+IsPostback :
+-----------
+
+This property is used to check web page is hosting information or not to the server and it is having two possible values true or false when it is true the webpage is hosting information on the server otherwise it is not hosting it is false .
+
+The page exposes the IsPostBack property. This is a read-only Boolean property that indicates if the page or control is being loaded for the first time, or if it is being loaded in response to a client postback. Many expensive operations (such as getting data from a database or populating ListItems) must be performed only the first time the page or control is loaded. If the page is posted to the server and then reloaded, there is no need to repeat the operation. By testing the value of IsPostBack, you can skip the expensive operation, as in the code snippets in Example 1 and Example 2.
+0ffj.
+Example 1. Testing for IsPostBack in VB.NET
+
+sub Page_Load(ByVal Sender as Object, _
+
+              ByVal e as EventArgs)
+
+   if not IsPostBack then
+
+      '  Do the expensive operations only the 
+
+      '  first time the page is loaded.
+
+   end if
+
+end sub
+
+Example 2. Testing for IsPostBack in C#
+
+void Page_Load(Object sender, EventArgs e)
+
+{
+
+   if (! IsPostBack)
+
+   {
+
+      //  Do the expensive operations only the 
+
+      //  first time the page is loaded.
+
+   }
+
+}
+
+
+The Page_Load subroutine runs EVERY time the page is loaded. If you want to execute the code in the Page_Load subroutine only the FIRST time the page is loaded, you can use the Page.IsPostBack property. If the Page.IsPostBack property is false, the page is loaded for the first time, if it is true, the page is posted back to the server (i.e. from a button click on a form):
+
+View State: 
+------------
+The view state maintains state in the client machine in the web page memory ,the view state value is located in hidden fields in binary format in view state object we can maintain value format data and refeence format data and view state values we can access in the web page memory and cant be distributed in the application memeory .
+
+ViewState is the mechanism that allows state values to be preserved across page postbacks.
+
+Because of the stateless nature of web pages, regular page member variables will not maintain their values across postbacks.  When we need a page variable to maintain its value across page post backs, we can use ViewState to store that value.  Values stored in ViewState will be serialized and sent to the client browser as the value of a hidden form input.  When you view the page source (in your browser) of a page the uses ViewState, you may see this hidden viewstate input which will look something like this:
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM1ODM3Nj......." /> 
+
+This single hidden field contains all the viewstate values for all the page controls. This is an important aspect of viewstate that you need to consider. 
+
+Because viewstate is (by default) sent to the client browser and then returned to the server in the form of a hidden input control on your page, storing a significant amount of data in viewstate can increase your page size and can affect your page performance.
+
+
+
+so let us see now one very good example demonstrating viewstate and ispostback method now .
+
+view state is used to preserve state of controls on webforms across postbacks.viewstate is stored in hidden field name __viewstate .The easiest way to see how big a viewstate is for each control add trace property as true in web page pagedirective of web page at the top . By default view state is enabled we can disable view state at page level,container level and at control level also .we have to set the EnableViewState property either true or false for this .
+
+Now open a web application put a listbox,button and a label .
+
+<form id="form1" runat="server">
+    
+        <asp:ListBox ID="ListBoxColors" runat="server"></asp:ListBox><br />
+    
+        <asp:Button ID="ButtonSelectorColor" runat="server" Text="select color" /><br />
+        
+        <asp:Label ID="LabelColor" runat="server" ></asp:Label>
+        
+    </form>
+
+	and change the values accordingly and for label u remove the text which it is showing label1 which i have done already.
+	
+	go to design view and double click the button 
+	
+	and write the following code 
+	
+	protected void ButtonSelectorColor_Click(object sender, EventArgs e)
+    {
+        LabelColor.Text = string.Format("you have selected the colors :{0}", ListBoxColors.SelectedValue);
+
+    }
+	
+	Now go to the page load event to intialize the value for listbox :
+	
+	and write the following code and see that i am using !ispostback which means false and this will do the work only once if u remove this !ispostback and see the difference u will come to know automatically about this 
+	
+	
+	protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+
+            ListBoxColors.Rows = 3;
+            ListBoxColors.Items.Add("red");
+            ListBoxColors.Items.Add("green");
+            ListBoxColors.Items.Add("yellow");
+
+        }
+
+		
+as view state is enables it remebers no of values to load in listbox okay so it will make roundtrips and retain the values .
+
+and now make trace =true and enableviewstate= false and then see the differences how the page doesnt work.
+after making trace=true check view source u can see the view state variable there.
+ 
+Note : for better understandng see the willye videos of asp.net 4.0 version one .
+ 
+
+ 
+Example on session state,viewstate and application state :
+-----------------------------------------------------------
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\globalfiledemo
+
+open a web application and put one button on it and on the page load event of Default.aspx page 
+
+and before that u have to include global.asax file also.
+
+and write the following code in that file first 
+
+<%@ Application Language="C#" %>
+
+<script runat="server">
+
+    void Application_Start(object sender, EventArgs e) 
+    {
+        Application["a"] = 1;
+        
+        
+
+    }
+    
+    void Application_End(object sender, EventArgs e) 
+    {
+        //  Code that runs on application shutdown
+
+    }
+        
+    void Application_Error(object sender, EventArgs e) 
+    { 
+        // Code that runs when an unhandled error occurs
+
+    }
+
+    void Session_Start(object sender, EventArgs e) 
+    {
+        Session["ss"] = 1;
+        
+    }
+
+    void Session_End(object sender, EventArgs e) 
+    {
+        // Code that runs when a session ends. 
+        // Note: The Session_End event is raised only when the sessionstate mode
+        // is set to InProc in the Web.config file. If session mode is set to StateServer 
+        // or SQLServer, the event is not raised.
+
+    }
+       
+</script>
+
+so above i had declared application and session values .
+
+and then in the page load event of glabal.asax file it is like this code 
+
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+        if (IsPostBack ==false)
+        {
+            ViewState["v"] = 1;
+
+        }
+
+        int aa1, ss1, vv1;
+        aa1 = (int)Application["a"];
+        ss1 = (int)Session["ss"];
+        vv1 = (int)ViewState["v"];
+        aa1++;
+        ss1++;
+        vv1++;
+        Application["a"] = aa1;
+        Session["ss"] = ss1;
+        ViewState["v"] = vv1;
+
+
+        Response.Write("<h1>" + "Application  =  " + Application["a"].ToString() + "<br>");
+
+        Response.Write("<h1>" + "session   =  " +Session ["ss"].ToString() + "<br>");
+
+        Response.Write("<h1>" + "viewstate  =  " + ViewState ["v"].ToString() + "<br>");
+
+        Response.Redirect("one.aspx");
+
+    }
+    
+I am sending all 3 types(session,application and viewstate) of values to one.aspx page and in that page load event i am trying to print i am able to print and display all except viewsate that is why in the code  i had marked it as comment// like this
+
+
+protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "Application  =  " + Application["a"].ToString() + "<br>");
+
+        Response.Write("<h1>" + "session   =  " + Session["ss"].ToString() + "<br>");
+
+        //Response.Write("<h1>" + "viewstate  =  " + ViewState["v"].ToString() + "<br>");
+
+    }
+	
+and whenever i am referhsing i am seeing the change in seesion and application values but when i am closing the application and again that starting then application value is not starting from zero but it counting from previous values.
+
+
+
+see u can put the code in button clik event also for better understanding of students by this much part of code from page load of Default.aspx page.
+
+
+
+ protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + "Application  =  " + Application["a"].ToString() + "<br>");
+
+        Response.Write("<h1>" + "session   =  " + Session["ss"].ToString() + "<br>");
+
+        Response.Write("<h1>" + "viewstate  =  " + ViewState["v"].ToString() + "<br>");
+
+        Response.Redirect("one.aspx");
+    }
+
+and in this go back and again clik the button and u can see the values are keep on changing like this ......
+
+Note : After going through all the stuff above from State management topic  just go through the following videos which is mentioned below :
+
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L01
+
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L02
+
+CONFIGURATION:
+______________
+
+In asp.net we can configure the values using web.config file the web.config file is designed using xml so using web.config file we can give instructions to application at the design time as well as at the run time ,the global web.config executes automatically before executing the web page in web.config file we can set following types of configuration setting values.
+
+The ASP.NET configuration system features an extensible infrastructure that enables you to define configuration settings at the time your ASP.NET applications are first deployed so that you can add or revise configuration settings at any time with minimal impact on operational Web applications and servers.
+
+Configuration information is stored in XML-based text files. You can use any standard text editor or XML parser to create and edit ASP.NET configuration files.
+Multiple configuration files, all named Web.config, can appear in multiple directories on an ASP.NET Web application server. Each Web.config file applies configuration settings to its own directory and all child directories below it. Configuration files in child directories can supply configuration information in addition to that inherited from parent directories, and the child directory configuration settings can override or modify settings defined in parent directories. The root configuration file named systemroot\Microsoft.NET\Framework\versionNumber\CONFIG\Machine.config provides ASP.NET configuration settings for the entire Web server.
+
+The custom settings are written as simple string variables.we can use a special web.config setting for several reasons:
+
+To centralize an important setting that needs to be used in many different pages: For example, we could create a variable that stores a database query. Any page that needs to use this query can then retrieve this value and use it.
+
+To make it easy to quickly switch between different modes of operation: For example, we might create a special debugging variable. Our web pages could check for this variable and, if it’s set to a specified value, output additional information to help us test the
+application.
+
+To set some initial values: Depending on the operation, the user might be able to modify these values, but the web.config file could supply the defaults.
+
+ 
+
+The ASP.NET configuration files have following advantages:
+
+Never locked: we can update web.config settings at any point, even while our application is running. If there are any requests currently under way, they’ll continue to use the old settings, while new requests will get the changed settings by itself.
+ 
+Easily accessed and replicated: If we have the appropriate network rights,we can change a web.config file from a remote computer not only this we can copy the web.config file and use it to apply identical settings to another application or another web server that runs the same application in a web farm scenario.
+
+The settings are easy to edit and understand: The settings in the web.config file are humanreadable,which means they can be edited and understood without needing a special configuration tool.
+
+1)Application settings
+2)Globalization settings
+3)Custom errors
+4)Authentication 
+5)Authorization
+
+
+ConfigurationManager:
+
+This class is used to get application setting values from the web.config file while accessing application settings values we have to refer refernce name in the application settings property this class is defined in system.configuration namespaces.
+
+
+Example on Application settings and customerrodemo:
+---------------------------------------------------
+In this example we will see set database connection values and use it in my program from web.config file and then  i will set global variables and use it in my programs and then i will set images and use in my program 
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\App_settings_with_Customerrordemo
+
+As u are working in viual studio 2005 u have to add explicitly web.config file in this.
+
+In this web config we can see various sections like application setting entry to define application specific values 
+which we will do it now and it has connectionstrings entry to define database connections.
+and rest of the file is system.web section which u can see it clearly here.
+
+here we can see that in system.web section the compilation debugging is false we can enable it to true .
+like wise if any person is using our website it provides authentication mode as windows default next section tells what to do when the user is doing any error what page has to be displayed as generic error and other error accordng to user custom erros pages we candefine in this section so i will start up with this now then move to application settings values where databse connection along with image and global variables i will be setting ...
+
+first i had uncommented the custom error section in my web page and custom error section allows u to define error pages rather than displaying built in error pages u can go for ur own error pages with coporate branding and color choice of yours which u want to present the profession appearnece to your web application.
+
+first on the top there is generic error page i am going to chnage the names of all the pages according to my needs in this configuration file and later on i will define those files in my solution explorer also 
+
+u can see in this 403 is an securit error user should not access these files if tries then this error page will be displayed 
+so again i will chnage to Mynoaccess page like that u can see in the website the chnages done only i added My as prefix 
+
+and then 404 error we know very well if file is not there and i am trying to access that file then this error willcome 
+
+so change the name of this also now 
+
+<customErrors mode="RemoteOnly" defaultRedirect="MyGenericErrorPage.htm">
+            <error statusCode="403" redirect="MyNoAccess.htm" />
+            <error statusCode="404" redirect="MyFileNotFound.htm" />
+        </customErrors>
+		
+		like this i changed it 
+		
+		
+		Now i have to add those pages one by one as they dont exsist yet in the website.
+		change the title and add some message in the body and using style builder modify the page to look better according to u .
+		right click on the design of web page and choose style option to build style 
+		
+		Now go to the page of default and put one button and write the code as like this below for button click
+		
+		 protected void SubmitButton_Click(object sender, EventArgs e)
+    {
+        int result;
+        int a = 10, b = 0;
+        result = a / b;
+
+    }
+	
+	
+	now press ctlr+f5 and then see the output  i am getting a asp error page where after getting exceptions the detailed information about the page is stored in trace file in the form of log files .
+	
+why it is not displying ur own page so chnage option remote to local in your web .conifg file of custom error settings
+as we are not working on any company server we are working on local machine as i have kept the mode as remoteonly which means my error pages will only be displayed to remote clients means if i am accessing my web application from a different computer 
+then i can see the error pages which i have defined . so change it to "On" which means error pages are visible to local client
+and then save all and run the application using cntrl + f5
+
+now u can see the difference 
+
+now try to allow a file which u are not allowed to like web.config come to main page 
+
+and write this in the url after folder
+http://localhost:51245/App_settings_with_Customerrordemo/web.config
+
+so i will noaccess.html file 
+
+like this try now this url 
+
+http://localhost:51245/App_settings_with_Customerrordemo/dhdjdkd.aspx
+
+i have some random file name to access and now 
+
+i am gettting filenotfound.html page with message oh no!the page is not available right now.
+
+
+now let us go with application settings now 
+
+remove the close tag and add new close tag to define set of database connections in  the file 
+
+so i have chnaged like this 
+
+
+<appSettings>
+
+</appSettings>
+
+  
+  now add the code 
+  
+ <appSettings>
+    <add  key="p"   value ="Data Source=USER-PC;Initial Catalog=AdventureWorks;User ID=sa;Password=sql2005"/>
+  </appSettings>
+  
+so we can see add this code in connectionstrings also which we will doing later in ado.net part of asp.net right now for demo i am doing it and for connectionstrings tag in the front end code changes anyhow this we will do later let us try now fro appsettings only.
+  
+  
+  
+  now i sould write one ado.net program here and use that thing in the program
+  
+  put two textboxes and two buttons now in the web page 
+  
+  create table employee(empid int,empname varchar(30))
+
+insert into employee values(101,'raghu')
+insert into employee values(102,'mohan')
+insert into employee values(103,'kiran')
+insert into employee values (104,'ravi')
+select * from employee
+
+so like above create table in database 
+
+now coming to code behind window of asp.net page 
+
+add namespace for ado.net connection 
+
+using System.Data.SqlClient;
+using System.Data;
+
+
+then disable the matter in normal button click event because it will throw error pages 
+
+and in global section write the following code 
+
+SqlConnection cnn=new SqlConnection (ConfigurationManager .AppSettings ["p"].ToString ());
+SqlCommand cmd;
+static SqlDataReader dr;
+
+
+then write following code  for display and next buttons are like this 
+
+
+    protected void DisplayButton_Click(object sender, EventArgs e)
+    {
+        cnn.Open();
+        cmd = new SqlCommand("select * from employee", cnn);
+        dr = cmd.ExecuteReader();
+        dr.Read();
+        TextBox1.Text = dr[0].ToString();
+        TextBox2.Text = dr[1].ToString();
+
+    }
+    protected void NextButton_Click(object sender, EventArgs e)
+    {
+        dr.Read();
+        TextBox1.Text = dr[0].ToString();
+        TextBox2.Text = dr[1].ToString();
+
+    }
+
+	
+	Now just run the page u see things start working now let us move to how to set global variables in appsetting tag only 
+	
+	and add those setting to one of label with name infolabel.
+	
+	when i want to represent a global data in my application and i dont want to hardcode that data in your source code then i will go for application settings .it has got a key and value and key is nothing but a programatic name and value is what actually gets  diplayed in my web application if i use that key 
+	
+	so write the following code again inappsettings of web.config file okay 
+	
+	<appSettings>
+    <add  key="p"   value ="Data Source=USER-PC;Initial Catalog=AdventureWorks;User ID=sa;Password=sql2005"/>
+    <add key="CopyWriteMessage" value ="Copyright (c) to RaghuTechnologies "/>
+	  <add key="img" value ="~/merlin.gif "/>
+    <add key="contactme" value="raghuponde@yahoo.com"/>
+  </appSettings >
+  
+  so u can see i had added two more things copyright information and  my email id for company 
+  so here no need to hardcode the information in source file it doing that declaretilvely in xml file .
+  
+  now add label 
+  
+  now write the following code in page load event 
+  
+  configurationmanager class exposes the information stored in web.config file okay 
+  
+  and it has got property appsettings which enables us to access any of  settings defined in web.config file 
+  
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        if (!IsPostBack)
+        {
+            string copyright = ConfigurationManager.AppSettings["CopyWriteMessage"];
+            string email = ConfigurationManager.AppSettings["contactme"];
+			 Image1.ImageUrl = ConfigurationManager.AppSettings["img"];
+            InfoLabel.Text = copyright + "," + email;
+        }
+
+    }
+	
+	now run and we can see the things running
+		
+    Now let us try loading an image also using application settings then but this part i am keeping it for pending later on we will do it okay .
+	
+	But now move to trace of web application and how to configure that in your web application okay .
+	
+	There is one more thing that comes under the subject of configuration ,that is Application tracing,to identify any potential errors after deployement and to check runtime errors also ,so we can do tracing on page by page basis or u can do it to entire web application. 
+	
+	Better u open the previous demo and start coding in that only so to enable page by page tracing ,go to page directive and add an attribute called as Trace=true,by defualt it is false.when we run the application we can see whole bunch of tracing information here ,it tells me time of the request ,it tells me what type of http request it was ,status code of 200 which means everything is okay ,it also shows detailed information about various methods and events called during life cycle of this page,from educational point of view it shows all the various methods that are called on your page object during that page round trip ,
+we will write our own trace information in this program only,next comes the control tree which tells us all the various controls that make up our page ,so this tells how many controls are present on the page ,how much memeory is allocated to them when they render themselves as html page.using trace we can diagnose the potential problems which we are having in our application .
+
+so now i want to add our own trace information in the web page ,
+so now in submit button click event i am writing trace information ,so i am using trace property and trace property is an property on the page object and it has methods write to write messages and warn method to give warning information ,it gives snapshot of information how error has occured etc.
+
+so this is the source code information written 
+
+  protected void SubmitButton_Click(object sender, EventArgs e)
+    {
+        Trace.Write("submit Button Method", "started");
+        try
+        {
+            int result;
+            int a = 10, b = 0;
+            result = a / b;
+        }
+        catch (ArithmeticException ee)
+        {
+            Trace.Warn("Submit_Button_Method", "Divide by zero", ee);
+        }
+    }
+
+
+so this is doing tracing page by page now how to do tracing in whole application 
+
+for this go back to web.config file and go back to the bottom,just below the close of system.web element write the following
+code and that code u can get it from help-->index and writing in the index trace or u can open the web.config.comments file from the directory C:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG
+
+and copy the trace code into the web.config which is like this
+
+<trace
+                      enabled = "false" [true=""|false=""]
+                      mostRecent = "false" [true=""|false=""]
+                      localOnly = "true" [true=""|false=""]
+                      pageOutput = "false" [true=""|false=""]
+                      requestLimit = "10" [number=""]
+                      traceMode = "SortByTime" [SortByTime="" | SortByCategory=""]
+                      writeToDiagnosticsTrace = "false" [true=""|false=""]
+            />
+    
+	then i will change the few things and and delete the things which i want to set and it will be like this
+	
+	
+	
+	<trace
+	   enabled = "true" 
+                    />
+    
+	
+	so here i had deleted all the statments,let us see how first the request limit is in a page how many i can see by default is 10 so no need of that tag i deleted and most recent tells us that ,if it is true i can see most recent 10 trace values and old values it will delete so that is why i have kept it as false and it will show old values also and it is also default so i deleted that tag also, local only means u want to show the errror messages to remote user or local user that is also default as local so i am deleted that tag also and like this if u want information page output to appear in each page or as summary like that i deleted all as they are default one no need to write them and finallly 
+	
+	I have made it enabled and it is true,
+	Now run the application again and click the submit button more than one time say 7 times and then write  
+	
+	http://localhost:51245/App_settings_with_Customerrordemo/Trace.axd
+	
+	check how many events are remaining ,Trace.axd tells asp.net application to retrive trace information for this web application,
+	there is no file sitting on the web server called trace.axd that gets generated dynamically when  u submit the request ,and it shows list of all the requests that we have made to application as i called the page 7 times so i can see still 3 request are pending so we know by default 10 request it supports and and there is hyperlink with view details which tells to see the file information.so trace is very intersting tools to diagonse your web application ,to see how the performance is ,to see how many requests they are getting and to see how many errors are happening.
+
+
+so this all about trace information .
+
+
+	just listen to the videos of asp.net of 6th chapter upto web services and continue with the study now with configuration details.
+	so now sometimes the program will not work because of errors so u need to add namespaces in your program and when it ask for assembly reference we have to add dll files in our application and when we add dll files then if u go in web.config file u will see in <compilation> section some assembly will be added which means that at compilation time we need this reference 
+	
+	so we can see in the folder of C:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG in web.config file which is global one 
+	there the namespaces u added the reference is provided like sometimes u will use System.IO ,System.xml etc.
+	
+	whenever u add a reference to external assembly means an assembly created by the user a BIN folder is automatically created.
+	so instead of adding a assembly of your own u can include class file and write code in that also and when we include it add a 
+	App_Code folder.
+	
+	whatever code we are writing in class file we can use it in our code behind .
+	
+	Globalization :
+	_________________
+	
+	Now i want to implement globalization through web.config file so how to do that let us see now .
+	
+	first let us go through naresh technologies demo and then from interent let us implement the things
+	
+	The globalization is used to set the languages in the .net technologies .net framework supports more then 250 languages by defualt the language is US-english language .using culture constant values we can set languages all culture constant values are located in web page culture property so using 4 properties we can set languages in web.config file .
+	
+1)request encoding: This property we have to set using xml encoding version ,current xml encoding version is Universal Text Format -8(UTF-8)
+
+2)Response Encoding: This property also we have to set using xml encoding version.
+
+3)UICulture : This property we can set using culture constant values.
+
+4)culture : This property is also set using culture constant value.
+
+example on globalization: 
+--------------------------
+
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\globalizationdemo
+
+put one button and on button click event u can write the following code 
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<h1>" + DateTime.Now.ToLongDateString());
+
+    }
+	
+	and in web.config file 
+	
+	
+			<globalization requestEncoding="utf-8" responseEncoding="utf-8" uiCulture="hi-IN" culture="hi-IN"/>
+			
+			write this code and just execute the code and u can see the effect but if u want to go deep let us try some interent examples here.
+			
+	so now u refer in this E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\globaldemos in this refer file multilanguage web site something like that and the program for this is already written and practised and kept in 
+			
+		E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\globalizationdemo2 and it is executing properly just read that file theory part and analize the things also in this.
+
+		u can like that refer some more files in this folder of globaldemos and practise on it it has got good theory part also to study and i am not keeping that theory part here that is why .
+		
+		
+		so Now let us move  to authorization and authentication of asp.net demo using web.config file only and after the naresh technologies demo we will move to internet demos now .
+	
+
+	   
+Authentication: is used for checking usernames and passwords. 
+Authorization: process of giving permission to the project means all the web pages he can access or not.		
+
+Authentication is the process of checking user information in authentication we have to maintain user information in global web.config file .The global web.config file controls all the web pages in the web application.Authentication we can classify into 
+
+
+1 Windows authentication.
+2.Forms authentication.
+3.Passpost authentication.
+
+so u better refer authentication folder in E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos for some theory part and examples also mention u can easily understand and also refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\AuthenticationandAuthoristiondemo for understanding of example i had implemented forms authentication in this example okay .
+
+so this will end the configuration part and now i am moving to next topic which is 
+
+for checking go to 
+
+Control Panel\All Control Panel Items\Administrative Tools\IIS manager and then new window will open and click Authentication.
+
+It is a very wide topic which we will deal later on.
+
+Note :REFER THE FOLLOWING FOR BETTER UNDERSTANDING OF CONCEPT  J:\Total_Training_Of_Asp.net\two\TASP2W1_P2\VIDEO\L06
+
+DATA BINDING :
+______________
+Note:For this i will be referring to pdfs first and  finally i will go ahead with the training videos as well.
+
+and i will be preparing a solid notes for it and in internet i will check for gridview insert using itemtemplate which i have  shown to students that u check in internet properly u will get it and after databinding u need to check  some oreilly books for deployment so that in interview u should not face problems in deployement of asp.net okay videos it is not given clearly .
+
+Data are as good as their accessibility. You can have all the great data stored in a table
+in your database, but if the user is confused or the data narrowly constricted in their
+display, the data might as well stay in the database. Data binding connects data sources
+with web controls, making it very easy to place your data into a clear presentation. In this
+chapter you will see how to connect data to everything from Labels to Lists and many
+controls in between.
+
+Data binding is one of those terms that states exactly what it is. It is a process of binding
+data to an ASP.NET 3.5 control. The data source that makes the most sense to bind is the
+data from a table in a database, but any kind of data can be bound using data binding. For
+example, you can bind values from items in an array or from a simple variable. Likewise,
+you can usefully bind data from a relational database or a single table.
+
+Almost every web application has to deal with data, whether it’s stored in a database, an XML file,
+a structured file, or something else. Retrieving this data is only part of the challenge—a modern
+application also needs a convenient, flexible, and attractive way to display the data in a web page.
+Fortunately, ASP.NET includes a rich and full-featured model for data binding. Data binding
+allows you to bind the data objects you’ve retrieved to one or more web controls, which will then
+show the data automatically. That means you don’t need to write time-consuming logic to loop
+through rows, read multiple fields, and manipulate individual controls.
+
+ASP.NET 2.0 goes one step further with a new set of data source controls. A data source control
+allows you to define a declarative link between your page and a data source (such as a database or
+a custom data access component).
+
+When used correctly, data source controls don’t need to prevent good design practices—in fact, informed
+developers can plug their own custom data access classes into the data binding framework without
+sacrificing a thing.
+
+On the ASP.NET side of the equation, the binding tag is simplicity itself. The tag is
+assigned to a control property. It has the following format:
+
+<%#dataSource%>
+
+The data source can be as simple as a function called in the C# portion of the application,
+or it may use a special ASP.NET function. For example, further on in the chapter, you will
+see the following line that provides the source as one of the fields in a database table:
+
+<%#DataBinder.Eval(Container.DataItem,"FieldName")%>
+
+It is part of a larger data access application that uses a set of data binding tags employed
+with a Repeater control and multiple fields. If you prefer, you can use the shorter version
+that does not show the fuller object path:
+
+<%#Eval("FieldName")%>
+
+Basic Binding :
+---------------
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\BasicBindingdemo
+
+
+Basic Binding
+
+To get started using a single simple data source, this section walks through a basic application
+that calls a C# method that returns a string. The data source is bound to a Label web control,
+and text surrounding the web control helps distinguish which is bound and which is not.
+Using CSS styling statements in the C# code, the bound data are distinguished by boldface
+green text.
+
+
+
+so u can refer to the above program for basic binding 
+The following steps show how to create this first step into data binding:
+1. Open a new Web Site with the name DatBind.
+2. Open the ASP.NET portion of the application, and drag a Label web control to the editor.
+3. Name the ID BindMe and set the text property to 
+text=<%# boundMessage() %>
+4. The following shows the entire ASP.NET code:
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+   The Text is not in a bind <br />
+   <asp:Label ID="BindMe" runat="server" Text="<%#BoundMessage() %>"></asp:Label><br />
+       <br />This text is back out of binding 
+        <br />
+        <br />
+        <br />
+  
+    </form>
+</body>
+</html>
+
+then in the code behind window the code is like this
+
+public partial class _Default : System.Web.UI.Page 
+{
+    private string msg;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        msg = "The Message is presented as a DataBining example<br> ";
+        msg += "Thanks for ur attention";
+        BindMe.Style["color"] = "#00cc00";
+        BindMe.Style["font-weight"] = "bold";
+        BindMe.DataBind();
+
+
+    }
+
+    protected string BoundMessage()
+    {
+
+        return msg;
+
+    }
+}
+
+	
+	
+so no need to explain the program it is clearly showing what it is doing.
+
+Now let us move to repeater control now ...
+
+
+
+Repeater demo:
+---------------
+
+The Repeater web control is another one of those self-describing objects. Used with data
+binding, the Repeater acts like a loop repeating statements. However, instead of repeating
+statements, it repeats a table-making routine so that as long as data are available, it repeats
+table rows. The table rows on the screen represent the table rows (records) in a table database.
+This next example moves into the realm of reading tables from a database rather than
+data from any other source. In other words, we will be looking at binding ADO.NET	
+
+database tables to ASP.NET controls. When dealing with ADO.NET data, you will
+quickly find that your best ASP.NET method is the DataBinder.Eval() method. It
+is combined with a Container.DataItem parameter to extract and bind a table field
+(column). The ASP.NET expression
+
+<%#DataBinder.Eval(Container.DataItem,"FieldName")%>
+
+makes identifying the data source very easy. Each field in the table has an identifier, and
+the data binding requires only that you know the name of the field. So rather than needing
+complex extraction code, the DataBinder.Eval() method for identifying a data
+source makes binding to a database table’s data quite simple.
+
+Basic Templates
+This next example shows how to create a simple yet very clear and attractive table. To
+provide a row and column header, the application uses a <HeaderTemplate> that
+provides each column with a label using the table’s column names. You do not have to
+use the column names supplied in the table, but can use any header name you want. In
+addition to a <HeaderTemplate>, you will also be using an <ItemTemplate> tag
+used in repeating rows for each record. The Repeater control is smart enough to know that
+the <HeaderTemplate> only expects one instance, while the <ItemTemplate>
+expects to be repeated until the table is exhausted.
+
+Repeating a Table
+The following steps show how to create data binding using a Repeater object:
+
+
+1. Open a new Web Site with the name TableRepeater.
+2. Open the ASP.NET portion of the application, and open the Data menu in the Toolbox.
+3. Drag a Repeater web control to the editor in the <div> container.
+4. Begin to type <H and IntelliSense provides you with the <HeaderTemplate>
+option to complete the tag as shown in Figure 13-4.
+5. The header template expects some way of identifying the columns of data. The general
+format is the following:
+<tr bgcolor=colorName>
+<th>Field#1</th>
+<th> Field#2</th>
+<th>etc</th>
+</tr>
+
+Generally, the row for the header has a different background color to distinguish it
+from a record.
+6. Following the header template is an item template. It is similar to the header template,
+except when using data binding, you will be repeating the template for every record.
+Also, in the item template, you must place the source data tags. You will see the
+following format:
+<tr>
+<td> <%#DataBinder.Eval(Container.DataItem,"Field#1") %></td>
+<td> <%#DataBinder.Eval(Container.DataItem,"Field#2") %></td>
+<td> <%#DataBinder.Eval(Container.DataItem,"etc.") %></td>
+</tr>
+A key difference between the header and item templates is that in the data biding
+statements, you must use the actual names of the fields. The table tags, though, are
+the same.
+
+7. The last tag that goes inside the Repeater control is the footer template. In this particular
+case, no table tags are included other than one that closes the table container. If you want
+a footer that will display more information, you can include it. Otherwise all you need is
+the following:
+<FooterTemplate>
+</table>
+</FooterTemplate>
+One element often placed in a footer template is the date and time. Others use the
+footer for the location of a copyright notice.
+
+refer E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\repeaterbindingdemo
+
+select * from dbo.employee
+
+101	raghu
+102	mohan
+103	kiran
+104	ravi
+
+code in the source code is like this 
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+   
+        <asp:Repeater ID="Repeater1" runat="server">
+       
+       <HeaderTemplate >
+       <table boder="0"  cellpadding ="3" >
+       <tr bgcolor="silver" >
+       <th>Id</th>
+       <th>Name</th>
+       </tr>
+              </HeaderTemplate> 
+       <ItemTemplate >
+       <tr>
+       <td><%#DataBinder.Eval (Container .DataItem ,"empid" %></td>
+       <td><%#DataBinder.Eval (Container .DataItem ,"empname" %></td>
+       
+       </tr>
+       
+       
+       </ItemTemplate>
+       <FooterTemplate >
+       </table>
+       </FooterTemplate>
+       
+        </asp:Repeater>
+    
+    </div>
+    </form>
+</body>
+</html>
+
+now code behind window code where i will connect the database and bind it to repater control and for more explainnation u can check the pdf called ASP.NET 3.5 Beginners Guide.
+
+using System.Data.SqlClient;
+
+public partial class _Default : System.Web.UI.Page 
+{
+    SqlConnection cnn = new  SqlConnection(ConfigurationManager.AppSettings["p"].ToString());
+    SqlCommand cmd;
+    static SqlDataReader dr;
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        cnn.Open();
+        cmd = new SqlCommand("select * from employee", cnn);
+        dr = cmd.ExecuteReader();
+        Repeater1.DataSource = dr;
+        Repeater1.DataBind();
+        dr.Close();
+        cnn.Close();
+
+    }
+}
+
+
+and Now u can see the output of repeater control .
+
+so this was the second example on the repeater control .
+
+so now u can add alternating template also to appear few rows in one color and other normal 
+
+like this 
+
+ <AlternatingItemTemplate>
+<tr bgcolor="#FFFF66">
+<td> <%#DataBinder.Eval(Container.DataItem, "empid") %></td>
+<td> <%#DataBinder.Eval(Container.DataItem, "empname") %></td>
+</tr>
+</AlternatingItemTemplate>
+       
+       <FooterTemplate >
+       </table>
+       </FooterTemplate>
+	   
+	   
+	Like that u can check all the remaining examples in that book and now i am moving to videos section and implement one by one all programs from videos and then finally check the code about sqldatasource in pro ASP.NET in C#2005 in datagridview or i will check the code from internet .
+
+so now some of the subtopics i have mentioned and u can check the programs in the down videos which i have given url and for that programs if u want to see readymade demo u can refer following urls okay .
+
+
+single value databinding :
+--------------------------
+refer: E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\07 - Data Binding\SingleValueBindingDemo
+
+Repeated value DataBinding:
+-----------------------------
+refer:	H:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\07 - Data Binding\RepeatedValueBindingDemo
+
+Sqldatasource:
+---------------
+refer :J:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\07 - Data Binding\SqlDataSourceDemo
+
+XmlDataSource:
+----------------
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\07 - Data Binding\XmlDataSourceDemo
+
+Gridview :
+_____________
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\GridViewDemo1
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\08 - Rich Data Binding\GridViewAndDatabaseDemo
+	
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\EditableGridViewDemo
+	
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\DetailsViewAndFormViewDemo
+	
+
+
+Note :FOR BETTER UNDERSTANDING REFER TO THE VIDEOS 
+
+-->J:\Total_Training_Of_Asp.net\two\TASP2W1_P2\VIDEO\L07 
+
+-->H:\Total_Training_Of_Asp.net\two\TASP2W1_P2\VIDEO\L08	
+
+		
+	
+STYLES IN ASP.NET :
+___________________
+
+The asp.net supports two types of styles one is DHTML styles and another is asp.net styles .
+
+DHTML Styles:
+--------------
+In all the web specification we can distribute styles from DHTML ,using style property or using style tag we can distribute styles in the web specifications using dhtml styles .using dhtml styles we can distribute styles to all asp.net controls and web pages and dhtml styles we can classify into 3 types .
+
+a)Inline level styles.
+b)Page level styles.
+c)Application level styles.
+	
+a)Inline level style gives styles to only one web control ,when we are expecting different styles in all controls,we have to implement inline level styles .In inline level style the style property is available in each and every statement.
+
+Example on inline level style :
+-------------------------------
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\InLineStyledemo
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <h1> 
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Style="z-index: 100;
+            left: 160px; position: absolute; top: 240px" Text="Button" />
+        This is for Test</h1>
+    <h1 style ="background-color :Red ; border-bottom-style :dotted;border-bottom-width:15px">This is for a test  </h1>
+    <h1 style="background-color :Green">This is a for Test</h1>
+    
+    </div>
+    </form>
+</body>
+</html>
+
+
+so in the source code u can see i have kept three h1 and last two h1 has got styles also .
+
+Page Level Styles:
+-------------------
+Page level styles distributes styles to the total web page controls when we  are expecting different styles in web pages we have to implement page level styles and all page level styles we have to define in the web page head tag ,the head tag control by default ,controls the styles of one page and this tag distributes all page level styles to all asp.net controls.
+
+Refer: E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\PageLevelStyle.
+
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+<style>
+input
+ {
+ background-color:red;
+ background-image:Url(file://D:/shirdiblink.gif);
+
+  }
+</style>
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Button ID="Button1" runat="server" Height="176px" Style="z-index: 100; left: 128px;
+            position: absolute; top: 176px" Text="Button" Width="272px" />
+        <asp:TextBox ID="TextBox1" runat="server" Height="64px" Style="z-index: 101; left: 496px;
+            position: absolute; top: 184px" Width="200px"></asp:TextBox>
+    
+    </div>
+    </form>
+</body>
+</html>
+
+so here i have decided one style which is input so what ever control i placed in that ,will have that background as red and image kept on it .
+
+Application Level Styles :
+--------------------------
+All application level styles we have to define in cascade style sheet file which is a css file having collection of DHTML classes.
+DHTML classes having collection of styles ,and its features we can distribute to asp.net controls.The cascade style sheet is having body tag .and the body tag styles we can distribute it to web pages ,after implementing cascade style sheet file we have to integrate with all web pages in the application ,The DHTML class features we can distribute by preferring  cssclass property to controls ,the Body tag distributing all styles to the web page after integrating with web page.
+
+
+refer:E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\Applicationlevelstyles.
+
+write the following code in stylesheet.css file .
+
+.C1
+{
+	background-color :Blue ;
+	background-image :Url(file://E:/merlin.gif);
+	border-bottom-color :Green ;
+	border-bottom-style :dotted;
+	border-bottom-width :15px;
+}
+
+and just save it .
+
+and in the Default.aspx page it is like this
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Button ID="Button1" runat="server" Height="80px" Style="z-index: 100; left: 272px;
+            position: absolute; top: 336px" Text="Button" Width="136px" CssClass="C1" />
+        <asp:TextBox ID="TextBox1" runat="server" Height="48px" Style="z-index: 102; left: 192px;
+            position: absolute; top: 176px" Width="256px" CssClass="C1"></asp:TextBox>
+    
+    </div>
+    </form>
+</body>
+</html>
+
+
+so u can see i have kept link tag and also added CssClass property to the controls.
+
+let us see another example for this u 
+
+refer: E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\ApplicationLevelStyledemo2
+
+I had defined two stylesheets and the code is like this .
+
+
+
+StyleSheet.css
+--------------
+
+
+
+body
+{
+	background-color :Green  ;
+	background-image :Url(file://D:IMG_0017.jpg);
+	background-position :center ;
+	background-repeat :no-repeat ;
+	background-attachment :fixed   ;
+	
+}
+
+StyleSheet2.css
+----------------
+.C2
+{
+	background-color :Blue;
+	background-image :Url(file://D:/shirdiblink.gif);
+	border-bottom-color :Yellow ;
+	border-bottom-style :dotted;
+	border-bottom-width :15px;
+	
+}
+Default.aspx:
+-------------
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="StyleSheet2.css" rel="stylesheet" type="text/css" />
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Button ID="Button1" runat="server" Height="88px" Style="z-index: 100; left: 232px;
+            position: absolute; top: 272px" Text="Button" Width="144px" CssClass="C2" />
+      </div>
+    </form>
+</body>
+</html>
+
+
+so u can see i have used two stylesheets and body tag of first style sheet is applied automatically .
+
+
+refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\CssDemo for better and good example on stylesheets okay .
+
+
+ASP.NET Styles :
+-----------------
+A Theme is a special type of folder ,the theme folder is having collection of skin files and cascade style sheet files.skin file is having collection of style tags,in skin file we can define all styles using asp.net style properties.Using skin files we can distribute styles to web server controls .when style tag is doesnt having skin id property we can distribute styles automatically to the web server controls after integrating with theme folder.when style tag is having skin id property we have to refer to skin id property to all web server controls let us see some demos on this.
+
+Web server control is having style properties,for html controls no style properties .so what ever we decide in skin file is reflected in the source mode of default page okay.
+
+when the skin id property is not available in style tag the style tag distributing styles to all controls after integrating with web page,but when the style tag is having skin id property we have to set skin id property in all button controls ,when we are expecting different styles in button controls we have add skin id property okay .
+
+
+
+
+Note : Notes can be written later just keep the practised demos in the respective folder okay without fail while going through video again some other time u can have notes or giving class on  some demos u can cover the notes right now job is important.
+
+The purpose of this skin file is to define the template element that will specify common properties for all types of instances of that control.remeber we should not give id and we can define functional properties also well like wraping the text etc like this things in asp.net.
+
+so themes gives u user interface control and they also give u functional control at the server rather than at the client .U will not get any intellinse support in skin file may be in future version this will be considered and put .
+
+so u have to apply the theme in this way 
+
+<%@ Page Language="C#"  Theme ="BasicTheme" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+and here it is connecting to folder not actually to skin file so what and all skin files u define in that folder all the properties will be applied to them .
+
+so whatever u write in the skin file is overriden by the style properties which u specify for style in the web page okay .
+so this is completely opposite to stylesheet because what we write in web page is overriden by the things in cascade style sheet .
+so if u want to override it u have to write StyleSheetTheme okay.
+
+we can also set up different themes for mandatory controls and optional controls also .like few textboxes i want in one color and few in some other color .but how we can we do it in skin file as all are having common templeate naa and no id we are using so we have to do something...
+
+also refer:E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\SimpleThemeDemo.
+also refer : E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\Themes_and_skin_demo.
+
+some more complextheme in Gridview examples are there which we will see later connectivity problem is coming but video is done for it .what we have to do is from fresh we have to connect by sql server connection and then u can practise the things which is given in videos so we will write notes for this section later on okay....
+
+Note : REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF THE CONCEPT : 
+
+J:\Total_Training_Of_Asp.net\three\TASP2W2_P1\VIDEO\L01
+
+one golden point is in themes we can use stylesheets means u can include stylesheet  page no problem and suppose u have defined some classes with dot which we do for classes then that class we can apply to already defined styles in skin file by using cssclass class property for example .datarow is class for changing row style in datagrid which is written stylesheet file then u can  go to skin file rowstyle proerty and apply cssclass =datarow to implement the things .so stylesheet and themes can be worked togehter no problem .
+
+Master Pages:
+_______________
+
+Note : REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF CONCEPT:
+
+J:\Total_Training_Of_Asp.net\three\TASP2W2_P1\VIDEO\L02
+
+
+Custom Controls :
+____________________
+
+Note :  REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF CONCEPT:
+
+J:\Total_Training_Of_Asp.net\three\TASP2W2_P1\VIDEO\L03
+
+J:\Total_Training_Of_Asp.net\three\TASP2W2_P1\VIDEO\L04
+
+J:\Total_Training_Of_Asp.net\three\TASP2W2_P1\VIDEO\L05
+
+
+and programs manually done on the above vidoes can be seen in below urls okay .
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\UserControlDemo  
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\MyServerControl
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\ColorLinkTestControl
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\ColorLinkTest2
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\MyWebControlLibrary
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\StyleLinkedTest1
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\CustomTextBoxText
+
+
+for composite controls :
+------------------------
+Refer :E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\MyWebControlLibraryComposite
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\CompositeTest
+
+
+E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\RegularExpressionTest2
+
+
+
+Managing View State :(EXTRA NOTES )
+_____________________
+All the values across postbacks are retrived using viewstate it retains all the controls values.Just before rendering all the controls values into html it takes all the values and stores it  in viewstate and 
+returns it back to browser earlier .All the fields which are having input are sent back to browser as an http request posted back to the server.The value in the label will not be posted back to the server .so during first postback it intilaizes the label with empty text values and then when we enter values all the information of the texboxes are intialed and then sent to view state and during second postback we can see the values appearing.
+suppose if u want to know which control is using view state value and memeory we can go for tracing of the application.
+view state is stored in the form of serilized data .
+
+refer videos for this as usual .
+
+Every time server calls a new page default and reintializes the value if we want to store controls values in local variables and that controls value in local variables i want to put it in another button click event it is not possible because everytime 
+it defines a new object of default.aspx page and its controls .so instance varibales are not retained across postbacks so we have to store in view state.as inside the page object these variables and controls are there with intialized values and at the end default page is discarded or destroyed so all controls will lose their values .Every time u do a round trip to server it creates a new default.aspx page.
+
+If lot of controls are there u cannot store values in lot of  view state variables so use foreach and some HTmlTableRow classes also for this ,u can also store class object values into viewstate no problem But the class which we are creating has to be serilized okay  means add serilizable attribute for this.
+Generally using some software and coding we can check or decode the serilized code and if u dont want to do it u can set viewstateencryptioncode as auto,always or never options okay .
+
+
+StateManagement in asp.net in more detail :(EXTRA NOTES )
+____________________________________________
+
+U can only store strings in querystring u cannot store objects and it is easily visible also so if u are querystring there is no security mechanism also means i can directly visit order page from url and add different kind of data in that .
+
+just refer videos it is enough u can understand how to use things well.
+
+cookies is used imagine the user is logging for the first time and when he logs on i will store his information in cookie file and some error has occured in website and i am throwing the user to deafault page a page before login page and in the code behind 
+default page i will check if there is a value in cookie i will make the user to go directly inside the website otherwise if cookie value is not there he has to log in again with some username like that we can make use of cookies
+
+u have to give expiry time to the cookie when u close the browser its value is lost and if u want to store cookie value into hard disk mention the time of expiry for that.How long u want to remeber infromation about client we can store that much amount of time in that .
+
+session state is an object which lives in asp.net server per client means if u have 1000 clients 1000 sessions will be there for that website okay.
+
+session default time is 20 minutes and it is the easy way to remember what the user has entered the data so far .The biggest advantage of session is u dont have to pass on data back and fro between pages in your application.Thats what we were doing in cookie and requestring we were writing request.querystring ?and pass some parameters so it is diffcult to pass every time some data from one page to another so we can go for sessions.As it is stored at the server we can always get it from the server .
+As memory is stored on server it certailnly poses a burden on your server that is only is the drawback for this .suppose 10,000 users are there with log of data for each user so it increses no of sessions also so we have to use session selectively in order to avoid scalibility issues when ur website goes into popularity.
+
+we can store custom objects in session state. we dont have to serilize the data in this as we were doing in view state because it is residing in server and value is not moving back and fro from one page to another as it was in  view state.
+
+		
+we can configure the sessions in web.config file using SessionState.as if we have more users more sessions so performance will decrese for that u can reduce the timeout time also .next comes the mode property which exactly governs the where session state is stored default value is InProc which means session state is stored in memory on asp.net webs server. this mode is fastest but all values will removed if do some change in configuration file or system reboots like that and another drawback is that this mode not works in webform where for more users some set of servers are configured similarly to share the load as common as there will be large no of users so in this situation also this will not work. because from one server to another server memory differs .
+
+we can disable cookie working by using cookieless attribute okay to make it true .and u can see a change in the url and some session value u can see .so session state will assume that cookie is not available .
+
+other values : sqlserver which is slowest apprach u have to provide connection string value also and session sate will be sored in sql server database and it can used in multiple servers environment and custom is used when u want to provide customized seession state manager later and if u dont want to use seesion disable it by off and stateserver means session state will be stored in  windows service etc like that we have different kinds of mode in session state to configure.
+
+
+ so we have to decide and choose which state management i have to go when the data is less and not important we can go for 
+ querystring and when security issues and u want to write a clean and neat code and u want to access everything from the server we can go for sessions and when u want to depend on browser setting u can go for cookies etc like that from requirement to requiremnt it depends what technique of statemanagement has to be used.session is easier to use and cookies  are used to store data negotiable for longer duration of time.
+ 
+ 
+
+ADO.NET IS ASP.NET :
+____________________
+Already u have done some programming in asp.net while application settings and also some programs are there in naresh technologies video so 
+
+Note : REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF CONCEPT:
+f,
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L03
+
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L04
+
+above videos are very good but u need to do practise for this to get complete idea into the subject . what we are doing in going further with ado.net is that we are creating some more functions in datareader class only and applying to datagridview and then afterwards we are using dataset to gridview so it definetely requires practise .so this two videos demonstration can be considered as mini  project and later on u can extend this project as online catalog by considering requirement from ur side and adding more and more tables into it.
+
+CACHING IN ASP.NET :
+_____________________
+
+caching is an essential characteristics in production scale websites ,it can make huge difference in performance of web application ,There are two types of caching output caching and data caching ,output cache refelcts the ability of webpage to cache the entire webiste output .with data caching we have to write the code to place objects into the cache ,some objects will take long time to create like datasets then we can go for data caching.All low level issues  like clearing the items from the cache when it becomes out of date etc so let us see now .
+
+sometimes in the web page we will have static data and we dont want to see updated data for some amount of time then we can cache it using output cache and can mention duration for that cache also and there is another parameter which is varybyparam which will disscuss now ,varybyparam caching is used to save a particular copy of record based on some id if the user is again logging in with that same id then it will show value from cache only and every time it will not generate a new page of round trip to server.
+To see the effect we can setf,aj. time and see using datetime.now like that okay and also we can do varybyparam by two variables seperating using ; okay  and if we have some 40 pages we cannot do all the pages changes we can go for web.config file for this okay .
+
+so this all about output caching okay .With regards to data caching u can refer an example of object caching in naresh technologies and follow tutorials in this video also well.
+and  u can refer naresh technologies book also which is having a quite sort of examples.
+
+Note : REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF CONCEPT:
+
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L05
+
+
+Managing Resources and Localization :
+_____________________________________
+
+refer videos thats all okay ...
+
+globalization means removing language specific contents from the application and localization means adding language specific contents into the application .when  u want to localize the application u have to remove hard coded strings nothing but what is appearing u have to replace with local language means we are replacing the hard coded data with multiple resource files and a resource file contains information about local languages .so remove all the Text= of labes and also of button and keep it in reosurce file and some value will be substituted dynamically from the resource file from where u have taken out text proeprty of labels and buttons okay.when i am defining resource files we have to put that in app_global something folder which tells that i am defining some global information for the project. so in .resx file name will be same but in value u shouf,,,,,,,,,,,,,,,,,,,,,j.ld know some german language or french language which u want to sustitute okay .
+
+so if u want to write code manually in .resx file then then global folder is generated and when u are using visual studio to generate resources file it create app-local folder and here also u have to know german okay only thing is control with text properties are created which ever we can add we can it will show there in .resx file okay .
+
+tools-->Generate Local resources
+
+Note : REFER THE FOLLOWING VIDEOS FOR PROPER UNDERSTANDING OF CONCEPT:
+
+J:\Total_Training_Of_Asp.net\four\TASP2W2_P2\VIDEO\L06
+
+
+DEPLOYEMENT IN ASP.NET : 
+_________________________
+
+First check in some good pdfs the methods of deployment in asp.net and then move on to the video part and check the deployement in winforms also as u have not covered this topic in .netnotes.txt and also refer niit book also finally.
+
+
+	refer:E:\Total_DotNet2.0\Unique_Total_DotNet\unique_asp.net\ASP.Net_Pdfs\pro_ASP.NET_3.5_in_C#2008.pdf and also refer 
+	there only orielly book for deployment information and then finally u go through videos okay which i have kept in  	
+	
+    E:\Total_DotNet2.0\backupof1gb\asp.net\raghuasp.netdemos\deployementvideos
+		
+  j.  and there only some html files are there for understanding.
+	
+	we will skip this topic for time being later on when u are free u can learn so refer this url down later on 
+	
+	D:\Bhopal\imp_bhopal\webdeployement
+	J:\Lynda.com.ASP.NET.Essential.Training.DVD\13. Deploying a Web Site
+	J:\ASP.NET 3.5 FUNDAMENTALS\Deployement
+	J:\ASP.NET 4.0 New Features\Web Deployement
+
+ASP.NET SECURITY ESSENTIALS :
+______________________________
+
+ we will skip this topic for time being later on when u are free u can learn so refer this url down later on 
+	
+D:\Bhopal\imp_bhopal\Security
+
+J:\Lynda.com.ASP.NET.Essential.Training.DVD\12. Securing a Site with Forms Authentication
+
+
+WEB SERVICES:
+______________
+	 
+we will see this part later on .
+
+
+
+
+
+ 
+
+
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+j.
